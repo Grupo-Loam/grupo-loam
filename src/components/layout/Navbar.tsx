@@ -26,11 +26,11 @@ export default function Navbar() {
         >
           <Image
             src="/images/logos/Loam.png"
-            alt="LOAM Grupo Empresarial"
+  alt="LOAM Grupo Empresarial"
+  className="mb-5 h-auto w-[145px]"
             width={180}
             height={64}
             priority
-            className="h-auto w-[118px] sm:w-[128px] md:w-[150px] lg:w-[165px]"
           />
         </Link>
 

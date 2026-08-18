@@ -8,13 +8,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
           {/* MARCA */}
           <div className="flex flex-col items-center text-center">
-            <Image
-              src="/images/logos/Loam.png"
-              alt="LOAM Grupo Empresarial"
-              width={145}
-              height={52}
-              className="mb-5 h-auto w-[145px]"
-            />
+            <img
+  src="/images/logos/Loam.png"
+  alt="LOAM Grupo Empresarial"
+  className="mb-5 h-auto w-[145px]"
+/>
 
             <p className="max-w-[230px] text-[14px] leading-7 text-[#666]">
               Construimos el presente para transformar el futuro.
