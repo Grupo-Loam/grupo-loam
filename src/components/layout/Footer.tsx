@@ -9,7 +9,7 @@ export default function Footer() {
           {/* MARCA */}
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/images/logos/loam.png"
+              src="/images/logos/Loam.png"
               alt="LOAM Grupo Empresarial"
               width={145}
               height={52}

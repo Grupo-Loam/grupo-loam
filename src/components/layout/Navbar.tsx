@@ -25,7 +25,7 @@ export default function Navbar() {
           className="flex shrink-0 items-center"
         >
           <Image
-            src="/images/logos/loam.png"
+            src="/images/logos/Loam.png"
             alt="LOAM Grupo Empresarial"
             width={180}
             height={64}
