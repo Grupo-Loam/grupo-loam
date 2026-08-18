@@ -11,7 +11,7 @@ const businesses = [
   {
     name: "Espresso Express",
     tagline: "Energía que conecta",
-    image: "/images/brands/espresso-express.jpeg",
+    image: "/images/brands/espresso-express.png",
     href: "#",
   },
   {
