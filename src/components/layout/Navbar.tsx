@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--bg-primary)]/95 backdrop-blur-md">
-      {/* CONTENEDOR */}
+      {/* CONTENEDOR PRINCIPAL */}
       <div className="mx-auto flex h-[90px] w-full max-w-[1920px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-12 xl:px-16 2xl:px-24">
         {/* LOGO */}
         <Link
@@ -105,12 +105,20 @@ export default function Navbar() {
       <div
         className={`overflow-hidden bg-[var(--bg-primary)] transition-all duration-500 lg:hidden ${
           open
-            ? "max-h-[650px] border-t border-[var(--color-border)] opacity-100"
+            ? "max-h-[700px] border-t border-[var(--color-border)] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="w-full px-6 pb-8 pt-5 sm:px-8 sm:pb-10 sm:pt-6">
-          <div className="mx-auto flex w-full max-w-[520px] flex-col">
+        <nav
+          className="w-full"
+          style={{
+            paddingLeft: "24px",
+            paddingRight: "24px",
+            paddingTop: "18px",
+            paddingBottom: "28px",
+          }}
+        >
+          <div className="mx-auto w-full max-w-[520px]">
             {links.map((link) => {
               const active = isActive(link.href);
 
@@ -119,7 +127,13 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="group flex items-center justify-between border-b border-[var(--color-border)]/70 px-1 py-[17px] last:border-0 sm:py-[18px]"
+                  className="group flex w-full items-center justify-between border-b border-[var(--color-border)]/70"
+                  style={{
+                    paddingTop: "17px",
+                    paddingBottom: "17px",
+                    paddingLeft: "6px",
+                    paddingRight: "6px",
+                  }}
                 >
                   <span
                     className={`text-[12px] font-medium uppercase tracking-[0.16em] ${
