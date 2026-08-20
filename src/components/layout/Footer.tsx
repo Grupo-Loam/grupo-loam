@@ -132,12 +132,12 @@ export default function Footer() {
               UBICACIÓN
             </h3>
 
-            <div className="w-full max-w-[340px] overflow-hidden border border-[var(--color-border)] shadow-sm">
-              <iframe
+<div className="w-full max-w-[210px] overflow-hidden border border-[var(--color-border)] shadow-sm">
+                  <iframe
                 title="Ubicación LOAM"
                 src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%"
-                height="240"
+                height="125"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="border-0 grayscale transition duration-500 hover:grayscale-0"
