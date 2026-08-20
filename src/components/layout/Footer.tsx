@@ -9,10 +9,10 @@ export default function Footer() {
           {/* MARCA */}
           <div className="flex flex-col items-center text-center">
             <img
-  src="/images/logos/Loam.png"
-  alt="LOAM Grupo Empresarial"
-  className="mb-5 h-auto w-[145px]"
-/>
+              src="/images/logos/Loam.png"
+              alt="LOAM Grupo Empresarial"
+              className="mb-6 h-auto w-[200px] sm:w-[215px]"
+            />
 
             <p className="max-w-[230px] text-[14px] leading-7 text-[#666]">
               Construimos el presente para transformar el futuro.
@@ -27,31 +27,46 @@ export default function Footer() {
 
             <ul className="space-y-2 text-[14px] leading-7 text-[#555]">
               <li>
-                <Link href="#nosotros" className="transition hover:text-[var(--color-bronce)]">
+                <Link
+                  href="#nosotros"
+                  className="transition hover:text-[var(--color-bronce)]"
+                >
                   Nosotros
                 </Link>
               </li>
 
               <li>
-                <Link href="#negocios" className="transition hover:text-[var(--color-bronce)]">
+                <Link
+                  href="#negocios"
+                  className="transition hover:text-[var(--color-bronce)]"
+                >
                   Negocios
                 </Link>
               </li>
 
               <li>
-                <Link href="#inversion" className="transition hover:text-[var(--color-bronce)]">
+                <Link
+                  href="#inversion"
+                  className="transition hover:text-[var(--color-bronce)]"
+                >
                   Inversión
                 </Link>
               </li>
 
               <li>
-                <Link href="#sostenibilidad" className="transition hover:text-[var(--color-bronce)]">
+                <Link
+                  href="#sostenibilidad"
+                  className="transition hover:text-[var(--color-bronce)]"
+                >
                   Sostenibilidad
                 </Link>
               </li>
 
               <li>
-                <Link href="#contacto" className="transition hover:text-[var(--color-bronce)]">
+                <Link
+                  href="#contacto"
+                  className="transition hover:text-[var(--color-bronce)]"
+                >
                   Contacto
                 </Link>
               </li>
@@ -65,8 +80,22 @@ export default function Footer() {
             </h3>
 
             <div className="text-[14px] leading-7 text-[#555]">
-              <p>administracion@grupoloam.com</p>
-              <p>+504 3166-6486</p>
+              <a
+                href="mailto:administracion@grupoloam.com"
+                className="block transition hover:text-[var(--color-bronce)]"
+              >
+                administracion@grupoloam.com
+              </a>
+
+              <a
+                href="https://wa.me/50431666486"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block transition hover:text-[var(--color-bronce)]"
+              >
+                +504 3166-6486
+              </a>
+
               <p>Honduras</p>
             </div>
 
@@ -81,7 +110,11 @@ export default function Footer() {
                 />
               </Link>
 
-              <Link href="https://wa.me/50431666486" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://wa.me/50431666486"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src="/images/icons/whatsapp.svg"
                   alt="WhatsApp"
@@ -121,22 +154,33 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* PARTE INFERIOR */}
         <div className="mt-12 border-t border-[var(--color-border)] pt-6">
           <div className="flex flex-col items-center justify-between gap-4 text-center text-[12px] text-[#777] md:flex-row md:text-left">
             <p>
-              © {new Date().getFullYear()} LOAM Grupo Empresarial. Todos los derechos reservados.
+              © {new Date().getFullYear()} LOAM Grupo Empresarial. Todos los
+              derechos reservados.
             </p>
 
             <div className="flex items-center justify-center gap-6">
-              <Link href="#" className="transition hover:text-[var(--color-bronce)]">
+              <Link
+                href="#"
+                className="transition hover:text-[var(--color-bronce)]"
+              >
                 Privacidad
               </Link>
 
-              <Link href="#" className="transition hover:text-[var(--color-bronce)]">
+              <Link
+                href="#"
+                className="transition hover:text-[var(--color-bronce)]"
+              >
                 Cookies
               </Link>
 
-              <Link href="#" className="transition hover:text-[var(--color-bronce)]">
+              <Link
+                href="#"
+                className="transition hover:text-[var(--color-bronce)]"
+              >
                 Términos
               </Link>
             </div>

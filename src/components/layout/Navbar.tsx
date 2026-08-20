@@ -19,23 +19,26 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--bg-primary)]/95 backdrop-blur-md">
       {/* CONTENEDOR */}
-<div className="mx-auto flex h-[82px] w-full max-w-[1920px] items-center justify-between px-6 sm:px-8 md:h-[90px] lg:px-12 xl:px-16 2xl:px-24">        <Link
+      <div className="mx-auto flex h-[90px] w-full max-w-[1920px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-12 xl:px-16 2xl:px-24">
+        {/* LOGO */}
+        <Link
           href="#"
           onClick={() => setOpen(false)}
           className="flex shrink-0 items-center"
         >
           <Image
             src="/images/logos/Loam.png"
-  alt="LOAM Grupo Empresarial"
-  className="mb-5 h-auto w-[145px]"
-            width={180}
-            height={64}
+            alt="LOAM Grupo Empresarial"
+            width={260}
+            height={105}
             priority
+            className="h-auto w-[175px] sm:w-[190px] md:w-[205px] lg:w-[220px]"
           />
         </Link>
 
         {/* DESKTOP */}
-<nav className="hidden items-center gap-7 lg:mr-12 lg:flex xl:mr-16 xl:gap-10 2xl:mr-20">   {links.map((link, index) => (
+        <nav className="hidden items-center gap-7 lg:mr-12 lg:flex xl:mr-16 xl:gap-10 2xl:mr-20">
+          {links.map((link, index) => (
             <Link
               key={link.name}
               href={link.href}
