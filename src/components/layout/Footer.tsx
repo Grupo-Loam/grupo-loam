@@ -126,33 +126,37 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* NEWSLETTER */}
-          <div className="flex flex-col items-center text-center">
-            <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
-              NEWSLETTER
-            </h3>
+{/* UBICACIÓN */}
+<div className="flex flex-col items-center text-center">
+  <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
+    UBICACIÓN
+  </h3>
 
-            <p className="mb-5 max-w-[260px] text-[14px] leading-7 text-[#555]">
-              Recibe noticias, novedades y crecimiento del grupo.
-            </p>
+  <div className="w-full max-w-[290px] overflow-hidden border border-[var(--color-border)] shadow-sm">
+    <iframe
+      title="Ubicación LOAM"
+      src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="210"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="border-0 grayscale transition duration-500 hover:grayscale-0"
+    />
+  </div>
 
-            <div className="flex w-full max-w-[280px] overflow-hidden border border-[#C8A66A]">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="min-w-0 flex-1 bg-transparent px-4 py-3 text-[13px] outline-none placeholder:text-[#999]"
-              />
-
-              <button
-                type="button"
-                aria-label="Suscribirse"
-                className="flex w-12 items-center justify-center bg-[#B48747] text-white transition hover:bg-[#9D743A]"
-              >
-                →
-              </button>
-            </div>
-          </div>
-        </div>
+  <p className="mt-4 text-[13px] leading-6 text-[#666]">
+    Próximamente compartiremos nuestra ubicación oficial.
+  </p>
+</div>
+<a
+  href="#"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-bronce)] transition hover:opacity-70"
+>
+  Abrir en Google Maps
+  <span>↗</span>
+</a>
 
         {/* PARTE INFERIOR */}
         <div className="mt-12 border-t border-[var(--color-border)] pt-6">
