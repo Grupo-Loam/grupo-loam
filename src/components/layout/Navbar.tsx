@@ -105,37 +105,39 @@ export default function Navbar() {
       <div
         className={`overflow-hidden bg-[var(--bg-primary)] transition-all duration-500 lg:hidden ${
           open
-            ? "max-h-[500px] border-t border-[var(--color-border)] opacity-100"
+            ? "max-h-[650px] border-t border-[var(--color-border)] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="w-full px-6 py-3 sm:px-8">
-          {links.map((link) => {
-            const active = isActive(link.href);
+        <nav className="w-full px-6 pb-8 pt-5 sm:px-8 sm:pb-10 sm:pt-6">
+          <div className="mx-auto flex w-full max-w-[520px] flex-col">
+            {links.map((link) => {
+              const active = isActive(link.href);
 
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="group flex items-center justify-between border-b border-[var(--color-border)]/70 py-[13px] last:border-0"
-              >
-                <span
-                  className={`text-[11px] font-medium uppercase tracking-[0.15em] ${
-                    active
-                      ? "text-[var(--color-bronce)]"
-                      : "text-[var(--color-carbon)]"
-                  }`}
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between border-b border-[var(--color-border)]/70 px-1 py-[17px] last:border-0 sm:py-[18px]"
                 >
-                  {link.name}
-                </span>
+                  <span
+                    className={`text-[12px] font-medium uppercase tracking-[0.16em] ${
+                      active
+                        ? "text-[var(--color-bronce)]"
+                        : "text-[var(--color-carbon)]"
+                    }`}
+                  >
+                    {link.name}
+                  </span>
 
-                <span className="text-[13px] text-[var(--color-taupe)]">
-                  →
-                </span>
-              </Link>
-            );
-          })}
+                  <span className="text-[14px] text-[var(--color-taupe)] transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
         </nav>
       </div>
     </header>
