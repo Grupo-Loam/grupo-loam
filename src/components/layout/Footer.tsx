@@ -28,7 +28,7 @@ export default function Footer() {
             <ul className="space-y-2 text-[14px] leading-7 text-[#555]">
               <li>
                 <Link
-                  href="#nosotros"
+                  href="/nosotros"
                   className="transition hover:text-[var(--color-bronce)]"
                 >
                   Nosotros
@@ -37,7 +37,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="#negocios"
+                  href="/#negocios"
                   className="transition hover:text-[var(--color-bronce)]"
                 >
                   Negocios
@@ -46,7 +46,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="#inversion"
+                  href="/#inversion"
                   className="transition hover:text-[var(--color-bronce)]"
                 >
                   Inversión
@@ -55,7 +55,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="#sostenibilidad"
+                  href="/#sostenibilidad"
                   className="transition hover:text-[var(--color-bronce)]"
                 >
                   Sostenibilidad
@@ -64,7 +64,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="#contacto"
+                  href="/#contacto"
                   className="transition hover:text-[var(--color-bronce)]"
                 >
                   Contacto
@@ -126,37 +126,39 @@ export default function Footer() {
             </div>
           </div>
 
-{/* UBICACIÓN */}
-<div className="flex flex-col items-center text-center">
-  <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
-    UBICACIÓN
-  </h3>
+          {/* UBICACIÓN */}
+          <div className="flex flex-col items-center text-center">
+            <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
+              UBICACIÓN
+            </h3>
 
-  <div className="w-full max-w-[290px] overflow-hidden border border-[var(--color-border)] shadow-sm">
-    <iframe
-      title="Ubicación LOAM"
-      src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      width="100%"
-      height="210"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      className="border-0 grayscale transition duration-500 hover:grayscale-0"
-    />
-  </div>
+            <div className="w-full max-w-[290px] overflow-hidden border border-[var(--color-border)] shadow-sm">
+              <iframe
+                title="Ubicación LOAM"
+                src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="210"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="border-0 grayscale transition duration-500 hover:grayscale-0"
+              />
+            </div>
 
-  <p className="mt-4 text-[13px] leading-6 text-[#666]">
-    Próximamente compartiremos nuestra ubicación oficial.
-  </p>
-</div>
-<a
-  href="#"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-bronce)] transition hover:opacity-70"
->
-  Abrir en Google Maps
-  <span>↗</span>
-</a>
+            <p className="mt-4 max-w-[290px] text-[13px] leading-6 text-[#666]">
+              Próximamente compartiremos nuestra ubicación oficial.
+            </p>
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-bronce)] transition hover:opacity-70"
+            >
+              Abrir en Google Maps
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
 
         {/* PARTE INFERIOR */}
         <div className="mt-12 border-t border-[var(--color-border)] pt-6">
