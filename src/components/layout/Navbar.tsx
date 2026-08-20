@@ -2,19 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { name: "Inicio", href: "#" },
-  { name: "Nosotros", href: "#nosotros" },
-  { name: "Negocios", href: "#negocios" },
-  { name: "Inversión", href: "#inversion" },
-  { name: "Sostenibilidad", href: "#sostenibilidad" },
-  { name: "Contacto", href: "#contacto" },
+  { name: "Inicio", href: "/" },
+  { name: "Nosotros", href: "/nosotros" },
+  { name: "Negocios", href: "/#negocios" },
+  { name: "Inversión", href: "/#inversion" },
+  { name: "Sostenibilidad", href: "/#sostenibilidad" },
+  { name: "Contacto", href: "/#contacto" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (href === "/nosotros") {
+      return pathname === "/nosotros";
+    }
+
+    return false;
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--bg-primary)]/95 backdrop-blur-md">
@@ -22,7 +36,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-[90px] w-full max-w-[1920px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-12 xl:px-16 2xl:px-24">
         {/* LOGO */}
         <Link
-          href="#"
+          href="/"
           onClick={() => setOpen(false)}
           className="flex shrink-0 items-center"
         >
@@ -38,19 +52,23 @@ export default function Navbar() {
 
         {/* DESKTOP */}
         <nav className="hidden items-center gap-7 lg:mr-12 lg:flex xl:mr-16 xl:gap-10 2xl:mr-20">
-          {links.map((link, index) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`relative whitespace-nowrap py-3 text-[11px] font-medium uppercase tracking-[0.13em] transition duration-300 xl:text-[12px] ${
-                index === 0
-                  ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
-                  : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const active = isActive(link.href);
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative whitespace-nowrap py-3 text-[11px] font-medium uppercase tracking-[0.13em] transition duration-300 xl:text-[12px] ${
+                  active
+                    ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
+                    : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* BOTÓN MÓVIL */}
@@ -92,28 +110,32 @@ export default function Navbar() {
         }`}
       >
         <nav className="w-full px-6 py-3 sm:px-8">
-          {links.map((link, index) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="group flex items-center justify-between border-b border-[var(--color-border)]/70 py-[13px] last:border-0"
-            >
-              <span
-                className={`text-[11px] font-medium uppercase tracking-[0.15em] ${
-                  index === 0
-                    ? "text-[var(--color-bronce)]"
-                    : "text-[var(--color-carbon)]"
-                }`}
-              >
-                {link.name}
-              </span>
+          {links.map((link) => {
+            const active = isActive(link.href);
 
-              <span className="text-[13px] text-[var(--color-taupe)]">
-                →
-              </span>
-            </Link>
-          ))}
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="group flex items-center justify-between border-b border-[var(--color-border)]/70 py-[13px] last:border-0"
+              >
+                <span
+                  className={`text-[11px] font-medium uppercase tracking-[0.15em] ${
+                    active
+                      ? "text-[var(--color-bronce)]"
+                      : "text-[var(--color-carbon)]"
+                  }`}
+                >
+                  {link.name}
+                </span>
+
+                <span className="text-[13px] text-[var(--color-taupe)]">
+                  →
+                </span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
