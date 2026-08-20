@@ -36,10 +36,13 @@ export default function NosotrosPage() {
     <>
       <Navbar />
 
-      <main className="w-full bg-[var(--bg-secondary)]">
-        {/* PRESENTACIÓN */}
-        <section className="flex w-full justify-center border-b border-[var(--color-border)] bg-[var(--bg-secondary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
+      <main className="w-full bg-[#F3F0E8]">
+
+        {/* ========================================
+            NOSOTROS
+        ======================================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-secondary)]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronce)]">
               Nosotros
             </p>
@@ -59,9 +62,14 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* MISIÓN */}
+        {/* ESPACIO ENTRE NOSOTROS Y MISIÓN */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-14 lg:h-16" />
+
+        {/* ========================================
+            MISIÓN
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -72,20 +80,24 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mt-14 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+            <p className="mt-12 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
               Desarrollar, administrar e impulsar negocios y marcas con
               identidad propia, creando valor sostenible a través de la
               innovación, la excelencia operativa y la gestión responsable,
               generando bienestar para nuestros clientes, colaboradores,
-              inversionistas y comunidades, hoy y para las futuras
-              generaciones.
+              inversionistas y comunidades, hoy y para las futuras generaciones.
             </p>
           </div>
         </section>
 
-        {/* VISIÓN */}
-        <section className="flex w-full justify-center bg-[var(--bg-secondary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
+        {/* ESPACIO ENTRE MISIÓN Y VISIÓN */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-14 lg:h-16" />
+
+        {/* ========================================
+            VISIÓN
+        ======================================== */}
+        <section className="flex w-full justify-center bg-[#EAE6DD]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -96,7 +108,7 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mt-14 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+            <p className="mt-12 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
               Ser un grupo empresarial sólido, diversificado y referente por la
               excelencia de sus marcas, su capacidad de innovación y su
               crecimiento sostenible, construyendo un legado que trascienda
@@ -105,9 +117,14 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* VALORES */}
+        {/* ESPACIO ENTRE VISIÓN Y VALORES */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-14 lg:h-16" />
+
+        {/* ========================================
+            VALORES
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[1180px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-40 lg:px-10 lg:py-48">
+          <div className="flex w-full max-w-[1180px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -118,7 +135,7 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <div className="mt-24 grid w-full gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-16 grid w-full gap-10 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value, index) => (
                 <article
                   key={value.title}
@@ -162,9 +179,14 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* FILOSOFÍA */}
+        {/* ESPACIO ENTRE VALORES Y FILOSOFÍA */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-14 lg:h-16" />
+
+        {/* ========================================
+            FILOSOFÍA
+        ======================================== */}
         <section className="flex w-full justify-center bg-[#EAE6DD]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-40 lg:px-10 lg:py-48">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -175,7 +197,7 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <h3 className="mt-16 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
+            <h3 className="mt-14 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
               Construimos. Operamos. Crecemos.
             </h3>
 
@@ -185,9 +207,14 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* CIERRE */}
+        {/* ESPACIO ENTRE FILOSOFÍA Y CIERRE */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-14 lg:h-16" />
+
+        {/* ========================================
+            CIERRE
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:py-40">
+          <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
               LOAM Grupo Empresarial
             </p>
