@@ -39,7 +39,7 @@ export default function NosotrosPage() {
       <main className="w-full bg-[var(--bg-secondary)]">
         {/* PRESENTACIÓN */}
         <section className="flex w-full justify-center border-b border-[var(--color-border)] bg-[var(--bg-secondary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-32 lg:px-10 lg:py-36">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronce)]">
               Nosotros
             </p>
@@ -61,7 +61,7 @@ export default function NosotrosPage() {
 
         {/* MISIÓN */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-32 lg:px-10 lg:py-36">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -77,14 +77,15 @@ export default function NosotrosPage() {
               identidad propia, creando valor sostenible a través de la
               innovación, la excelencia operativa y la gestión responsable,
               generando bienestar para nuestros clientes, colaboradores,
-              inversionistas y comunidades, hoy y para las futuras generaciones.
+              inversionistas y comunidades, hoy y para las futuras
+              generaciones.
             </p>
           </div>
         </section>
 
         {/* VISIÓN */}
         <section className="flex w-full justify-center bg-[var(--bg-secondary)]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-32 lg:px-10 lg:py-36">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:px-10 lg:py-44">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -106,7 +107,7 @@ export default function NosotrosPage() {
 
         {/* VALORES */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[1180px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-36 lg:px-10 lg:py-40">
+          <div className="flex w-full max-w-[1180px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-40 lg:px-10 lg:py-48">
             <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -163,7 +164,7 @@ export default function NosotrosPage() {
 
         {/* FILOSOFÍA */}
         <section className="flex w-full justify-center bg-[#EAE6DD]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-36 lg:px-10 lg:py-40">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-32 text-center sm:px-8 md:py-40 lg:px-10 lg:py-48">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -186,7 +187,7 @@ export default function NosotrosPage() {
 
         {/* CIERRE */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
-          <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-32">
+          <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-28 text-center sm:px-8 md:py-36 lg:py-40">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
               LOAM Grupo Empresarial
             </p>
