@@ -73,16 +73,6 @@ export default function Footer() {
             <div className="mt-5 flex items-center justify-center gap-5">
               <Link href="#">
                 <Image
-                  src="/images/icons/linkedin.svg"
-                  alt="LinkedIn"
-                  width={20}
-                  height={20}
-                  className="opacity-75 transition hover:opacity-100"
-                />
-              </Link>
-
-              <Link href="#">
-                <Image
                   src="/images/icons/instagram.svg"
                   alt="Instagram"
                   width={20}
@@ -91,7 +81,7 @@ export default function Footer() {
                 />
               </Link>
 
-              <Link href="#">
+              <Link href="https://wa.me/50431666486" target="_blank" rel="noopener noreferrer">
                 <Image
                   src="/images/icons/whatsapp.svg"
                   alt="WhatsApp"
