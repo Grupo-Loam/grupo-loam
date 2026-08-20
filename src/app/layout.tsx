@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  variable: "--font-cinzel",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
 export const metadata: Metadata = {
-  title: "LOAM Grupo Empresarial",
-  description: "Visión de hoy, legado de mañana.",
+  title: {
+    default: "LOAM Grupo Empresarial",
+    template: "%s | LOAM Grupo Empresarial",
+  },
+  description:
+    "Desarrollamos y gestionamos negocios con propósito, generando valor sostenible para las personas, colaboradores y futuras generaciones.",
 };
 
 export default function RootLayout({
@@ -24,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${cinzel.variable} ${montserrat.variable}`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
