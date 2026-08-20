@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,49 +7,27 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 export const metadata: Metadata = {
   title: "Nosotros | LOAM Grupo Empresarial",
   description:
-    "Conoce la misión, visión, filosofía y valores de LOAM Grupo Empresarial.",
+    "Conoce la misión, visión y valores de LOAM Grupo Empresarial.",
 };
 
 const values = [
   {
-    number: "01",
     title: "Visión de largo plazo",
     description: "Pensamos en generaciones, no en trimestres.",
   },
   {
-    number: "02",
     title: "Excelencia operativa",
     description:
       "Eficiencia, calidad y mejora continua en todo lo que hacemos.",
   },
   {
-    number: "03",
     title: "Crecimiento sostenible",
     description: "Invertimos en ideas, personas y comunidades.",
   },
   {
-    number: "04",
     title: "Integridad",
     description:
       "Actuamos con transparencia, respeto y responsabilidad.",
-  },
-];
-
-const brands = [
-  {
-    number: "01",
-    name: "Heladería Sarita",
-    tagline: "Experiencia dulce y familiar.",
-  },
-  {
-    number: "02",
-    name: "Espresso Express",
-    tagline: "Energía que conecta.",
-  },
-  {
-    number: "03",
-    name: "Terraza Magnolia",
-    tagline: "Celebraciones que trascienden.",
   },
 ];
 
@@ -59,209 +36,144 @@ export default function NosotrosPage() {
     <>
       <Navbar />
 
-      <main>
-        {/* HERO */}
-        <section className="w-full bg-[var(--bg-secondary)]">
-          <div className="mx-auto w-full max-w-[1500px] px-6 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28 xl:px-16">
-            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-20">
-              <div>
-                <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
-                  Nosotros
-                </p>
+      <main className="bg-[var(--bg-secondary)]">
+        {/* PRESENTACIÓN */}
+        <section className="w-full border-b border-[var(--color-border)]">
+          <div className="mx-auto max-w-[1050px] px-6 py-16 text-center sm:px-8 md:py-20 lg:py-24">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronce)]">
+              Nosotros
+            </p>
 
-                <h1 className="max-w-[820px] font-[var(--font-cinzel)] text-[42px] leading-[1.12] tracking-[-0.025em] text-[var(--color-carbon)] sm:text-[52px] md:text-[60px] lg:text-[66px]">
-                  Construimos empresas con visión de largo plazo.
-                </h1>
-              </div>
+            <h1 className="mx-auto mt-5 max-w-[850px] font-[var(--font-cinzel)] text-[34px] leading-[1.2] text-[var(--color-carbon)] sm:text-[42px] md:text-[48px]">
+              LOAM Grupo Empresarial
+            </h1>
 
-              <div className="lg:pb-2">
-                <p className="max-w-[520px] text-[16px] leading-8 text-[var(--color-text-secondary)] sm:text-[17px] lg:text-[18px] lg:leading-9">
-                  LOAM Grupo Empresarial es la marca corporativa matriz desde
-                  la cual desarrollamos, administramos e impulsamos negocios y
-                  marcas con identidad propia.
-                </p>
+            <div className="mx-auto my-7 h-px w-16 bg-[var(--color-bronce)]" />
 
-                <p className="mt-6 max-w-[520px] text-[15px] leading-8 text-[#756F68]">
-                  Construimos estructuras sólidas preparadas para crecer de
-                  manera responsable, sostenible y con visión generacional.
-                </p>
-              </div>
-            </div>
+            <p className="mx-auto max-w-[780px] text-[15px] leading-8 text-[var(--color-text-secondary)] sm:text-[16px] md:text-[17px]">
+              Somos la marca corporativa matriz desde la cual desarrollamos,
+              administramos e impulsamos negocios y marcas con identidad
+              propia, construyendo estructuras sólidas preparadas para crecer
+              de manera sostenible y con visión de largo plazo.
+            </p>
           </div>
         </section>
 
         {/* MISIÓN */}
         <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto w-full max-w-[1300px] px-6 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28">
-            <div className="grid gap-8 lg:grid-cols-[230px_1fr] lg:gap-20">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
-                  Misión
-                </p>
-              </div>
+          <div className="mx-auto max-w-[1000px] px-6 py-16 sm:px-8 md:py-20">
+            {/* TÍTULO CON LÍNEAS */}
+            <div className="flex items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
-              <div className="max-w-[880px]">
-                <h2 className="font-[var(--font-cinzel)] text-[34px] leading-tight text-[var(--color-carbon)] sm:text-[42px] lg:text-[48px]">
-                  Crear valor sostenible.
-                </h2>
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
+                Misión
+              </h2>
 
-                <p className="mt-8 text-[16px] leading-8 text-[#625D57] sm:text-[17px] lg:leading-9">
-                  Desarrollar, administrar e impulsar negocios y marcas con
-                  identidad propia, creando valor sostenible a través de la
-                  innovación, la excelencia operativa y la gestión responsable,
-                  generando bienestar para nuestros clientes, colaboradores,
-                  inversionistas y comunidades, hoy y para las futuras
-                  generaciones.
-                </p>
-              </div>
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
+
+            <p className="mx-auto mt-9 max-w-[820px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+              Desarrollar, administrar e impulsar negocios y marcas con
+              identidad propia, creando valor sostenible a través de la
+              innovación, la excelencia operativa y la gestión responsable,
+              generando bienestar para nuestros clientes, colaboradores,
+              inversionistas y comunidades, hoy y para las futuras
+              generaciones.
+            </p>
           </div>
         </section>
 
         {/* VISIÓN */}
         <section className="w-full bg-[var(--bg-secondary)]">
-          <div className="mx-auto w-full max-w-[1300px] px-6 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28">
-            <div className="grid gap-8 lg:grid-cols-[230px_1fr] lg:gap-20">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
-                  Visión
-                </p>
-              </div>
+          <div className="mx-auto max-w-[1000px] px-6 py-16 sm:px-8 md:py-20">
+            <div className="flex items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
-              <div className="max-w-[880px]">
-                <h2 className="font-[var(--font-cinzel)] text-[34px] leading-tight text-[var(--color-carbon)] sm:text-[42px] lg:text-[48px]">
-                  Construir un legado.
-                </h2>
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
+                Visión
+              </h2>
 
-                <p className="mt-8 text-[16px] leading-8 text-[#625D57] sm:text-[17px] lg:leading-9">
-                  Ser un grupo empresarial sólido, diversificado y referente
-                  por la excelencia de sus marcas, su capacidad de innovación y
-                  su crecimiento sostenible, construyendo un legado que
-                  trascienda generaciones y abra oportunidades para un futuro
-                  mejor.
-                </p>
-              </div>
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
-          </div>
-        </section>
 
-        {/* FILOSOFÍA */}
-        <section className="w-full bg-[#EAE6DD]">
-          <div className="mx-auto w-full max-w-[1500px] px-6 py-20 text-center sm:px-8 md:py-24 lg:px-12 lg:py-28">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronce)]">
-              Nuestra filosofía
-            </p>
-
-            <h2 className="mx-auto mt-7 max-w-[1000px] font-[var(--font-cinzel)] text-[36px] leading-[1.15] text-[var(--color-carbon)] sm:text-[44px] md:text-[50px] lg:text-[56px]">
-              Construimos. Operamos. Crecemos.
-            </h2>
-
-            <p className="mt-5 font-[var(--font-cinzel)] text-[18px] text-[#67615A] sm:text-[22px]">
-              Visión de hoy, legado de mañana.
+            <p className="mx-auto mt-9 max-w-[820px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+              Ser un grupo empresarial sólido, diversificado y referente por
+              la excelencia de sus marcas, su capacidad de innovación y su
+              crecimiento sostenible, construyendo un legado que trascienda
+              generaciones y abra oportunidades para un futuro mejor.
             </p>
           </div>
         </section>
 
         {/* VALORES */}
         <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto w-full max-w-[1400px] px-6 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28">
-            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
-                  Lo que nos guía
-                </p>
+          <div className="mx-auto max-w-[1100px] px-6 py-16 sm:px-8 md:py-20">
+            <div className="flex items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
-                <h2 className="mt-5 font-[var(--font-cinzel)] text-[34px] leading-tight text-[var(--color-carbon)] sm:text-[40px]">
-                  Nuestros valores
-                </h2>
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
+                Valores
+              </h2>
 
-                <p className="mt-6 max-w-[390px] text-[15px] leading-8 text-[#6C665F]">
-                  Principios que orientan nuestras decisiones y la manera en que
-                  construimos el futuro.
-                </p>
-              </div>
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+            </div>
 
-              <div className="grid gap-x-12 gap-y-12 sm:grid-cols-2">
-                {values.map((value) => (
-                  <article key={value.title}>
-                    <span className="text-[11px] tracking-[0.16em] text-[var(--color-bronce)]">
-                      {value.number}
-                    </span>
+            <div className="mx-auto mt-12 grid max-w-[950px] gap-10 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-12">
+              {values.map((value, index) => (
+                <article key={value.title} className="text-center">
+                  <span className="text-[10px] font-semibold tracking-[0.18em] text-[var(--color-bronce)]">
+                    0{index + 1}
+                  </span>
 
-                    <h3 className="mt-5 font-[var(--font-cinzel)] text-[19px] uppercase leading-7 tracking-[0.03em] text-[var(--color-carbon)]">
-                      {value.title}
-                    </h3>
+                  <h3 className="mt-3 font-[var(--font-cinzel)] text-[17px] uppercase leading-7 tracking-[0.04em] text-[var(--color-carbon)] sm:text-[18px]">
+                    {value.title}
+                  </h3>
 
-                    <p className="mt-4 max-w-[300px] text-[14px] leading-7 text-[#68635D]">
-                      {value.description}
-                    </p>
-                  </article>
-                ))}
-              </div>
+                  <div className="mx-auto my-4 h-px w-9 bg-[var(--color-bronce)]" />
+
+                  <p className="mx-auto max-w-[350px] text-[14px] leading-7 text-[#68635D] sm:text-[15px]">
+                    {value.description}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* MARCAS */}
-        <section className="w-full bg-[var(--bg-secondary)]">
-          <div className="mx-auto w-full max-w-[1400px] px-6 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28">
-            <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
-                  Grupo empresarial
-                </p>
+        {/* FILOSOFÍA */}
+        <section className="w-full bg-[#EAE6DD]">
+          <div className="mx-auto max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20">
+            <div className="flex items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
-                <h2 className="mt-5 max-w-[500px] font-[var(--font-cinzel)] text-[34px] leading-tight text-[var(--color-carbon)] sm:text-[40px]">
-                  Marcas con identidad propia.
-                </h2>
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
+                Nuestra filosofía
+              </h2>
 
-                <p className="mt-6 max-w-[430px] text-[15px] leading-8 text-[#68635D]">
-                  Cada negocio conserva su esencia mientras forma parte de una
-                  estructura empresarial preparada para crecer de manera
-                  sostenible.
-                </p>
-              </div>
-
-              <div>
-                {brands.map((brand) => (
-                  <div
-                    key={brand.name}
-                    className="grid gap-4 border-b border-[var(--color-border)] py-6 first:border-t sm:grid-cols-[60px_1fr]"
-                  >
-                    <span className="pt-1 text-[11px] tracking-[0.16em] text-[var(--color-bronce)]">
-                      {brand.number}
-                    </span>
-
-                    <div>
-                      <h3 className="font-[var(--font-cinzel)] text-[21px] text-[var(--color-carbon)] sm:text-[23px]">
-                        {brand.name}
-                      </h3>
-
-                      <p className="mt-2 text-[12px] uppercase tracking-[0.08em] text-[#77716A]">
-                        {brand.tagline}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
+
+            <h3 className="mt-10 font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
+              Construimos. Operamos. Crecemos.
+            </h3>
+
+            <p className="mt-5 font-[var(--font-cinzel)] text-[17px] text-[#6B655E] sm:text-[20px]">
+              Visión de hoy, legado de mañana.
+            </p>
           </div>
         </section>
 
         {/* CIERRE */}
         <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto flex w-full max-w-[1400px] flex-col items-start justify-between gap-10 px-6 py-20 sm:px-8 md:py-24 lg:flex-row lg:items-end lg:px-12 lg:py-28">
-            <h2 className="max-w-[760px] font-[var(--font-cinzel)] text-[34px] leading-tight text-[var(--color-carbon)] sm:text-[42px] lg:text-[48px]">
-              Construimos empresas pensando en el mañana.
-            </h2>
+          <div className="mx-auto max-w-[900px] px-6 py-14 text-center sm:px-8 md:py-16">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
+              LOAM Grupo Empresarial
+            </p>
 
-            <Link
-              href="/#negocios"
-              className="inline-flex shrink-0 items-center gap-3 border-b border-[var(--color-bronce)] pb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-carbon)] transition duration-300 hover:text-[var(--color-bronce)]"
-            >
-              Conoce nuestros negocios
-              <span>→</span>
-            </Link>
+            <p className="mx-auto mt-5 max-w-[700px] font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
+              Construimos el presente para transformar el futuro.
+            </p>
           </div>
         </section>
       </main>
