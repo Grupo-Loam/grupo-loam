@@ -66,7 +66,7 @@ export default function Footer() {
 
             <div className="text-[14px] leading-7 text-[#555]">
               <p>administracion@grupoloam.com</p>
-              <p>+504 9603-6255</p>
+              <p>+504 3166-6486</p>
               <p>Honduras</p>
             </div>
 
