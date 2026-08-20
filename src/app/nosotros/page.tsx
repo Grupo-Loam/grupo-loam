@@ -36,33 +36,37 @@ export default function NosotrosPage() {
     <>
       <Navbar />
 
-      <main className="bg-[var(--bg-secondary)]">
-        {/* PRESENTACIÓN */}
-        <section className="w-full border-b border-[var(--color-border)]">
-          <div className="mx-auto w-full max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20 lg:py-24">
+      <main className="w-full bg-[var(--bg-secondary)]">
+        {/* =========================
+            PRESENTACIÓN
+        ========================== */}
+        <section className="flex w-full justify-center border-b border-[var(--color-border)] bg-[var(--bg-secondary)]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-16 text-center sm:px-8 md:py-20 lg:px-10 lg:py-24">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronce)]">
               Nosotros
             </p>
 
-            <h1 className="mx-auto mt-5 max-w-[850px] font-[var(--font-cinzel)] text-[34px] leading-[1.2] text-[var(--color-carbon)] sm:text-[42px] md:text-[48px]">
+            <h1 className="mt-5 max-w-[850px] text-center font-[var(--font-cinzel)] text-[34px] leading-[1.2] text-[var(--color-carbon)] sm:text-[42px] md:text-[48px]">
               LOAM Grupo Empresarial
             </h1>
 
-            <div className="mx-auto my-7 h-px w-16 bg-[var(--color-bronce)]" />
+            <div className="my-7 h-px w-16 bg-[var(--color-bronce)]" />
 
-            <p className="mx-auto max-w-[820px] text-center text-[15px] leading-8 text-[var(--color-text-secondary)] sm:text-[16px] md:text-[17px]">
+            <p className="max-w-[820px] text-center text-[15px] leading-8 text-[var(--color-text-secondary)] sm:text-[16px] md:text-[17px]">
               Somos la marca corporativa matriz desde la cual desarrollamos,
-              administramos e impulsamos negocios y marcas con identidad
-              propia, construyendo estructuras sólidas preparadas para crecer
-              de manera sostenible y con visión de largo plazo.
+              administramos e impulsamos negocios y marcas con identidad propia,
+              construyendo estructuras sólidas preparadas para crecer de manera
+              sostenible y con visión de largo plazo.
             </p>
           </div>
         </section>
 
-        {/* MISIÓN */}
-        <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto w-full max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20">
-            <div className="flex items-center justify-center gap-5 sm:gap-8">
+        {/* =========================
+            MISIÓN
+        ========================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-primary)]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-16 text-center sm:px-8 md:py-20 lg:px-10">
+            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
               <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
@@ -72,21 +76,22 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mx-auto mt-9 max-w-[820px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+            <p className="mt-9 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
               Desarrollar, administrar e impulsar negocios y marcas con
               identidad propia, creando valor sostenible a través de la
               innovación, la excelencia operativa y la gestión responsable,
               generando bienestar para nuestros clientes, colaboradores,
-              inversionistas y comunidades, hoy y para las futuras
-              generaciones.
+              inversionistas y comunidades, hoy y para las futuras generaciones.
             </p>
           </div>
         </section>
 
-        {/* VISIÓN */}
-        <section className="w-full bg-[var(--bg-secondary)]">
-          <div className="mx-auto w-full max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20">
-            <div className="flex items-center justify-center gap-5 sm:gap-8">
+        {/* =========================
+            VISIÓN
+        ========================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-secondary)]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-16 text-center sm:px-8 md:py-20 lg:px-10">
+            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
               <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
@@ -96,19 +101,21 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mx-auto mt-9 max-w-[820px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
-              Ser un grupo empresarial sólido, diversificado y referente por
-              la excelencia de sus marcas, su capacidad de innovación y su
+            <p className="mt-9 max-w-[850px] text-center text-[15px] leading-8 text-[#625D57] sm:text-[16px] md:text-[17px] md:leading-9">
+              Ser un grupo empresarial sólido, diversificado y referente por la
+              excelencia de sus marcas, su capacidad de innovación y su
               crecimiento sostenible, construyendo un legado que trascienda
               generaciones y abra oportunidades para un futuro mejor.
             </p>
           </div>
         </section>
 
-        {/* VALORES */}
-        <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto w-full max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20">
-            <div className="flex items-center justify-center gap-5 sm:gap-8">
+        {/* =========================
+            VALORES
+        ========================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-primary)]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-16 text-center sm:px-8 md:py-20 lg:px-10">
+            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
               <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
@@ -118,11 +125,11 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <div className="mx-auto mt-12 grid max-w-[900px] gap-12 sm:grid-cols-2 sm:gap-x-16 sm:gap-y-14">
+            <div className="mt-12 grid w-full max-w-[900px] grid-cols-1 gap-x-16 gap-y-14 sm:grid-cols-2">
               {values.map((value, index) => (
                 <article
                   key={value.title}
-                  className="mx-auto flex max-w-[360px] flex-col items-center text-center"
+                  className="flex w-full flex-col items-center text-center"
                 >
                   <span className="text-[10px] font-semibold tracking-[0.18em] text-[var(--color-bronce)]">
                     0{index + 1}
@@ -134,7 +141,7 @@ export default function NosotrosPage() {
 
                   <div className="my-4 h-px w-9 bg-[var(--color-bronce)]" />
 
-                  <p className="mx-auto max-w-[340px] text-center text-[14px] leading-7 text-[#68635D] sm:text-[15px]">
+                  <p className="max-w-[340px] text-center text-[14px] leading-7 text-[#68635D] sm:text-[15px]">
                     {value.description}
                   </p>
                 </article>
@@ -143,10 +150,12 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* FILOSOFÍA */}
-        <section className="w-full bg-[#EAE6DD]">
-          <div className="mx-auto w-full max-w-[1000px] px-6 py-16 text-center sm:px-8 md:py-20">
-            <div className="flex items-center justify-center gap-5 sm:gap-8">
+        {/* =========================
+            FILOSOFÍA
+        ========================== */}
+        <section className="flex w-full justify-center bg-[#EAE6DD]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-16 text-center sm:px-8 md:py-20 lg:px-10">
+            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
               <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
@@ -156,24 +165,26 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <h3 className="mx-auto mt-10 max-w-[850px] font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
+            <h3 className="mt-10 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
               Construimos. Operamos. Crecemos.
             </h3>
 
-            <p className="mx-auto mt-5 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#6B655E] sm:text-[20px]">
+            <p className="mt-5 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#6B655E] sm:text-[20px]">
               Visión de hoy, legado de mañana.
             </p>
           </div>
         </section>
 
-        {/* CIERRE */}
-        <section className="w-full bg-[var(--bg-primary)]">
-          <div className="mx-auto w-full max-w-[900px] px-6 py-14 text-center sm:px-8 md:py-16">
+        {/* =========================
+            CIERRE
+        ========================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-primary)]">
+          <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-14 text-center sm:px-8 md:py-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
               LOAM Grupo Empresarial
             </p>
 
-            <p className="mx-auto mt-5 max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
+            <p className="mt-5 max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
               Construimos el presente para transformar el futuro.
             </p>
           </div>
