@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--bg-primary)]">
       <div className="w-full px-6 py-12 lg:px-10 2xl:px-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
+        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1.3fr] xl:gap-12">
           {/* MARCA */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex h-full flex-col items-center justify-center text-center">
             <img
               src="/images/logos/Loam.png"
               alt="LOAM Grupo Empresarial"
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           {/* ENLACES */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex h-full flex-col items-center justify-center text-center">
             <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
               ENLACES RÁPIDOS
             </h3>
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
 
           {/* CONTACTO */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex h-full flex-col items-center justify-center text-center">
             <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
               CONTÁCTANOS
             </h3>
@@ -127,24 +127,24 @@ export default function Footer() {
           </div>
 
           {/* UBICACIÓN */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex h-full flex-col items-center justify-center text-center">
             <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
               UBICACIÓN
             </h3>
 
-            <div className="w-full max-w-[290px] overflow-hidden border border-[var(--color-border)] shadow-sm">
+            <div className="w-full max-w-[340px] overflow-hidden border border-[var(--color-border)] shadow-sm">
               <iframe
                 title="Ubicación LOAM"
                 src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%"
-                height="210"
+                height="240"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="border-0 grayscale transition duration-500 hover:grayscale-0"
               />
             </div>
 
-            <p className="mt-4 max-w-[290px] text-[13px] leading-6 text-[#666]">
+            <p className="mt-4 max-w-[320px] text-[13px] leading-6 text-[#666]">
               Próximamente compartiremos nuestra ubicación oficial.
             </p>
 
