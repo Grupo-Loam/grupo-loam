@@ -42,7 +42,9 @@ export default function NosotrosPage() {
       <Navbar />
 
       <main className="w-full bg-[#F3F0E8]">
-        {/* NOSOTROS */}
+        {/* ========================================
+            NOSOTROS
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-secondary)]">
           <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronce)]">
@@ -55,7 +57,10 @@ export default function NosotrosPage() {
 
             <div className="mt-8 h-px w-16 bg-[var(--color-bronce)]" />
 
-            <p className="mt-20 max-w-[820px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <p className="max-w-[820px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
               Somos la marca corporativa matriz desde la cual desarrollamos,
               administramos e impulsamos negocios y marcas con identidad propia,
               construyendo estructuras sólidas preparadas para crecer de manera
@@ -64,9 +69,12 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <div className="h-8 w-full bg-[#F3F0E8] md:h-10 lg:h-12" />
+        {/* ESPACIO ENTRE NOSOTROS Y MISIÓN */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-12 lg:h-14" />
 
-        {/* MISIÓN */}
+        {/* ========================================
+            MISIÓN
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
           <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
@@ -79,7 +87,10 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mt-20 max-w-[850px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <p className="max-w-[850px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
               Desarrollar, administrar e impulsar negocios y marcas con
               identidad propia, creando valor sostenible a través de la
               innovación, la excelencia operativa y la gestión responsable,
@@ -89,9 +100,12 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <div className="h-8 w-full bg-[#F3F0E8] md:h-10 lg:h-12" />
+        {/* ESPACIO ENTRE MISIÓN Y VISIÓN */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-12 lg:h-14" />
 
-        {/* VISIÓN */}
+        {/* ========================================
+            VISIÓN
+        ======================================== */}
         <section className="flex w-full justify-center bg-[#EAE6DD]">
           <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
             <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
@@ -104,7 +118,10 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <p className="mt-20 max-w-[850px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <p className="max-w-[850px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
               Ser un grupo empresarial sólido, diversificado y referente por la
               excelencia de sus marcas, su capacidad de innovación y su
               crecimiento sostenible, construyendo un legado que trascienda
@@ -113,120 +130,133 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <div className="h-8 w-full bg-[#F3F0E8] md:h-10 lg:h-12" />
+        {/* ESPACIO ENTRE VISIÓN Y VALORES */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-12 lg:h-14" />
 
-{/* ========================================
-    VALORES
-======================================== */}
-<section className="flex w-full justify-center bg-[var(--bg-primary)]">
-  <div className="flex w-full max-w-[1380px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+        {/* ========================================
+            VALORES
+        ======================================== */}
+        <section className="flex w-full justify-center bg-[var(--bg-primary)]">
+          <div className="flex w-full max-w-[1380px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+            {/* TÍTULO */}
+            <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
-    {/* TÍTULO */}
-    <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
-      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
+                Valores
+              </h2>
 
-      <h2 className="shrink-0 font-[var(--font-cinzel)] text-[22px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[26px]">
-        Valores
-      </h2>
-
-      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
-    </div>
-
-    {/* ESPACIO ENTRE VALORES Y CARDS */}
-    <div className="h-8 md:h-10 lg:h-12" />
-
-    {/* CARDS */}
-    <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {values.map((value, index) => (
-        <article
-          key={value.title}
-          className="
-            group
-            overflow-hidden
-            rounded-[2px]
-            border
-            border-[#D9D2C6]
-            bg-[#F8F5EE]
-            text-left
-            transition-all
-            duration-500
-            hover:-translate-y-1
-            hover:border-[var(--color-bronce)]
-            hover:shadow-[0_14px_36px_rgba(23,26,28,0.10)]
-          "
-        >
-          <div className="relative h-[215px] w-full overflow-hidden sm:h-[225px]">
-            <Image
-              src={value.image}
-              alt={value.title}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-
-            <div className="absolute inset-0 bg-black/[0.03] transition duration-500 group-hover:bg-transparent" />
-          </div>
-
-          <div className="flex flex-col px-8 py-8">
-            <span className="text-[11px] font-medium tracking-[0.18em] text-[var(--color-bronce)]">
-              0{index + 1}
-            </span>
-
-            <div className="mt-5 flex min-h-[60px] items-start">
-              <h3 className="max-w-[205px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
-                {value.title}
-              </h3>
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <div className="mt-5 h-[2px] w-11 bg-[var(--color-bronce)] transition-all duration-500 group-hover:w-16" />
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
 
-            <p className="mt-6 max-w-[250px] text-[15px] leading-7 text-[#2F2C28]">
-              {value.description}
+            {/* CARDS */}
+            <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {values.map((value, index) => (
+                <article
+                  key={value.title}
+                  className="
+                    group
+                    overflow-hidden
+                    rounded-[2px]
+                    border
+                    border-[#D9D2C6]
+                    bg-[#F8F5EE]
+                    text-left
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    hover:border-[var(--color-bronce)]
+                    hover:shadow-[0_14px_36px_rgba(23,26,28,0.10)]
+                  "
+                >
+                  <div className="relative h-[215px] w-full overflow-hidden sm:h-[225px]">
+                    <Image
+                      src={value.image}
+                      alt={value.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+
+                    <div className="absolute inset-0 bg-black/[0.03] transition duration-500 group-hover:bg-transparent" />
+                  </div>
+
+                  <div className="flex flex-col px-8 py-8">
+                    <span className="text-[11px] font-medium tracking-[0.18em] text-[var(--color-bronce)]">
+                      0{index + 1}
+                    </span>
+
+                    <div className="mt-5 flex min-h-[60px] items-start">
+                      <h3 className="max-w-[205px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
+                        {value.title}
+                      </h3>
+                    </div>
+
+                    <div className="mt-5 h-[2px] w-11 bg-[var(--color-bronce)] transition-all duration-500 group-hover:w-16" />
+
+                    <p className="mt-6 max-w-[250px] text-[15px] leading-7 text-[#2F2C28]">
+                      {value.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* MISMO ESPACIADO */}
+            <div className="h-10 md:h-12 lg:h-14" />
+          </div>
+        </section>
+
+        {/* ========================================
+            FILOSOFÍA
+        ======================================== */}
+        <section className="flex w-full justify-center bg-[#EAE6DD]">
+          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+
+              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
+                Nuestra filosofía
+              </h2>
+
+              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+            </div>
+
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <h3 className="max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
+              Construimos. Operamos. Crecemos.
+            </h3>
+
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <p className="max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
+              Visión de hoy, legado de mañana.
             </p>
           </div>
-        </article>
-      ))}
-    </div>
+        </section>
 
-    {/* ESPACIO ENTRE CARDS Y FILOSOFÍA */}
-    <div className="h-10 md:h-12 lg:h-14" />
-  </div>
-</section>
+        {/* ESPACIO ENTRE FILOSOFÍA Y CIERRE */}
+        <div className="h-10 w-full bg-[#F3F0E8] md:h-12 lg:h-14" />
 
-{/* ========================================
-    FILOSOFÍA
-======================================== */}
-<section className="flex w-full justify-center bg-[#EAE6DD]">
-  <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
-    <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
-      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
-
-      <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
-        Nuestra filosofía
-      </h2>
-
-      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
-    </div>
-
-    <h3 className="mt-20 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
-      Construimos. Operamos. Crecemos.
-    </h3>
-
-    <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
-      Visión de hoy, legado de mañana.
-    </p>
-  </div>
-</section>
-
-
-        {/* CIERRE */}
+        {/* ========================================
+            CIERRE
+        ======================================== */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
           <div className="flex w-full max-w-[900px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronce)]">
               LOAM Grupo Empresarial
             </p>
 
-            <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
+            {/* MISMO ESPACIADO */}
+            <div className="h-8 md:h-10 lg:h-12" />
+
+            <p className="max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
               Construimos el presente para transformar el futuro.
             </p>
           </div>
