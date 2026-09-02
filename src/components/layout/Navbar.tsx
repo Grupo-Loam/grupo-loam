@@ -21,15 +21,21 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    if (href === "/nosotros") return pathname === "/nosotros";
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (href === "/nosotros") {
+      return pathname === "/nosotros";
+    }
+
     return false;
   };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[#EEEBE3]/95 backdrop-blur-md">
       {/* CONTENEDOR */}
-      <div className="mx-auto flex h-[90px] w-full max-w-[1700px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-16 xl:px-20 2xl:px-24">
+      <div className="relative mx-auto flex h-[90px] w-full max-w-[1700px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-16 xl:px-20 2xl:px-24">
         {/* LOGO */}
         <Link
           href="/"
@@ -46,8 +52,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* DESKTOP */}
-        <nav className="hidden flex-1 justify-center lg:flex">
+        {/* MENÚ DESKTOP CENTRADO REAL */}
+        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex">
           <div className="flex items-center gap-14 xl:gap-20 2xl:gap-24">
             {links.map((link) => {
               const active = isActive(link.href);
@@ -56,7 +62,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative whitespace-nowrap py-3 text-[12px] font-medium uppercase tracking-[0.13em] transition duration-300 xl:text-[13px] ${
+                  className={`relative whitespace-nowrap py-3 text-[12px] font-medium uppercase tracking-[0.14em] transition duration-300 xl:text-[13px] ${
                     active
                       ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
                       : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
@@ -155,3 +161,4 @@ export default function Navbar() {
     </header>
   );
 }
+
