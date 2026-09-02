@@ -120,7 +120,6 @@ export default function NosotrosPage() {
 ======================================== */}
 <section className="flex w-full justify-center bg-[var(--bg-primary)]">
   <div className="flex w-full max-w-[1380px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
-
     {/* TÍTULO */}
     <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
       <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
@@ -132,8 +131,11 @@ export default function NosotrosPage() {
       <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
     </div>
 
+    {/* ESPACIO ENTRE VALORES Y CARDS */}
+    <div className="h-16 md:h-20 lg:h-24" />
+
     {/* CARDS */}
-    <div className="mt-24 grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {values.map((value, index) => (
         <article
           key={value.title}
@@ -171,9 +173,21 @@ export default function NosotrosPage() {
               0{index + 1}
             </span>
 
-            {/* ALTURA FIJA PARA ALINEAR LOS TÍTULOS */}
-            <div className="mt-5 flex min-h-[58px] items-start">
-              <h3 className="max-w-[250px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
+            {/* BLOQUE FIJO PARA ALINEAR TODOS LOS TÍTULOS */}
+            <div className="mt-5 flex min-h-[60px] items-start">
+              <h3
+                className="
+                  max-w-[205px]
+                  font-[var(--font-cinzel)]
+                  text-[20px]
+                  font-medium
+                  uppercase
+                  leading-[1.3]
+                  tracking-[0.02em]
+                  text-[#1D1D1B]
+                  sm:text-[21px]
+                "
+              >
                 {value.title}
               </h3>
             </div>
@@ -187,6 +201,34 @@ export default function NosotrosPage() {
         </article>
       ))}
     </div>
+
+    {/* ESPACIO ENTRE CARDS Y FILOSOFÍA */}
+    <div className="h-20 md:h-24 lg:h-28" />
+  </div>
+</section>
+
+{/* ========================================
+    FILOSOFÍA
+======================================== */}
+<section className="flex w-full justify-center bg-[#EAE6DD]">
+  <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+    <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
+      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+
+      <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
+        Nuestra filosofía
+      </h2>
+
+      <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
+    </div>
+
+    <h3 className="mt-20 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
+      Construimos. Operamos. Crecemos.
+    </h3>
+
+    <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
+      Visión de hoy, legado de mañana.
+    </p>
   </div>
 </section>
 
