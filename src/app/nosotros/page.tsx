@@ -57,7 +57,7 @@ export default function NosotrosPage() {
 
             <div className="mt-8 h-px w-16 bg-[var(--color-bronce)]" />
 
-            <p className="mt-16 max-w-[820px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
+            <p className="mt-20 max-w-[820px] text-center text-[15px] leading-8 text-[#514D47] sm:text-[16px] md:text-[17px] md:leading-9">
               Somos la marca corporativa matriz desde la cual desarrollamos,
               administramos e impulsamos negocios y marcas con identidad propia,
               construyendo estructuras sólidas preparadas para crecer de manera
@@ -139,13 +139,12 @@ export default function NosotrosPage() {
               <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
             </div>
 
-            <div className="mt-20 grid w-full gap-7 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-24 grid w-full gap-7 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value, index) => (
                 <article
                   key={value.title}
                   className="group overflow-hidden border border-[#D6D0C5] bg-[#F7F4ED] text-left transition-all duration-500 hover:-translate-y-1 hover:border-[var(--color-bronce)] hover:shadow-[0_14px_35px_rgba(23,26,28,0.10)]"
                 >
-                  {/* IMAGEN */}
                   <div className="relative h-[210px] w-full overflow-hidden sm:h-[220px]">
                     <Image
                       src={value.image}
@@ -158,7 +157,6 @@ export default function NosotrosPage() {
                     <div className="absolute inset-0 bg-black/5 transition duration-500 group-hover:bg-black/0" />
                   </div>
 
-                  {/* CONTENIDO */}
                   <div className="flex min-h-[230px] flex-col px-7 py-8">
                     <span className="text-[10px] font-semibold tracking-[0.2em] text-[var(--color-bronce)]">
                       0{index + 1}
@@ -170,7 +168,7 @@ export default function NosotrosPage() {
 
                     <div className="mt-6 h-px w-10 bg-[var(--color-bronce)] transition-all duration-500 group-hover:w-16" />
 
-                    <p className="mt-8 text-[14px] leading-7 text-[#393633] sm:text-[15px]">
+                    <p className="mt-10 text-[14px] leading-7 text-[#393633] sm:text-[15px]">
                       {value.description}
                     </p>
                   </div>
@@ -202,7 +200,7 @@ export default function NosotrosPage() {
               Construimos. Operamos. Crecemos.
             </h3>
 
-            <p className="mt-12 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
+            <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
               Visión de hoy, legado de mañana.
             </p>
           </div>
@@ -220,7 +218,7 @@ export default function NosotrosPage() {
               LOAM Grupo Empresarial
             </p>
 
-            <p className="mt-14 max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
+            <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[24px] leading-[1.5] text-[var(--color-carbon)] sm:text-[28px]">
               Construimos el presente para transformar el futuro.
             </p>
           </div>
