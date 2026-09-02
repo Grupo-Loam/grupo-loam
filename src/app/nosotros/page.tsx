@@ -115,11 +115,13 @@ export default function NosotrosPage() {
 
         <div className="h-8 w-full bg-[#F3F0E8] md:h-10 lg:h-12" />
 
-        {/* ========================================
+{/* ========================================
     VALORES
 ======================================== */}
 <section className="flex w-full justify-center bg-[var(--bg-primary)]">
   <div className="flex w-full max-w-[1380px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+
+    {/* TÍTULO */}
     <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
       <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
 
@@ -130,7 +132,8 @@ export default function NosotrosPage() {
       <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
     </div>
 
-    <div className="mt-20 grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {/* CARDS */}
+    <div className="mt-24 grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {values.map((value, index) => (
         <article
           key={value.title}
@@ -150,7 +153,7 @@ export default function NosotrosPage() {
           "
         >
           {/* IMAGEN */}
-          <div className="relative h-[205px] w-full overflow-hidden sm:h-[215px]">
+          <div className="relative h-[215px] w-full overflow-hidden sm:h-[225px]">
             <Image
               src={value.image}
               alt={value.title}
@@ -168,9 +171,12 @@ export default function NosotrosPage() {
               0{index + 1}
             </span>
 
-            <h3 className="mt-5 max-w-[250px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
-              {value.title}
-            </h3>
+            {/* ALTURA FIJA PARA ALINEAR LOS TÍTULOS */}
+            <div className="mt-5 flex min-h-[58px] items-start">
+              <h3 className="max-w-[250px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
+                {value.title}
+              </h3>
+            </div>
 
             <div className="mt-5 h-[2px] w-11 bg-[var(--color-bronce)] transition-all duration-500 group-hover:w-16" />
 
