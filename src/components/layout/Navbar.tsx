@@ -31,9 +31,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--bg-primary)]/95 backdrop-blur-md">
-      {/* CONTENEDOR PRINCIPAL */}
-      <div className="mx-auto flex h-[90px] w-full max-w-[1920px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-12 xl:px-16 2xl:px-24">
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[#EEEBE3]/95 backdrop-blur-md">
+      {/* CONTENEDOR */}
+      <div className="mx-auto flex h-[90px] w-full max-w-[1700px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-16 xl:px-20 2xl:px-24">
         {/* LOGO */}
         <Link
           href="/"
@@ -51,7 +51,7 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP */}
-        <nav className="hidden items-center gap-7 lg:mr-12 lg:flex xl:mr-16 xl:gap-10 2xl:mr-20">
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-10">
           {links.map((link) => {
             const active = isActive(link.href);
 
@@ -103,7 +103,7 @@ export default function Navbar() {
 
       {/* MENÚ MÓVIL */}
       <div
-        className={`overflow-hidden bg-[var(--bg-primary)] transition-all duration-500 lg:hidden ${
+        className={`overflow-hidden bg-[#EEEBE3] transition-all duration-500 lg:hidden ${
           open
             ? "max-h-[700px] border-t border-[var(--color-border)] opacity-100"
             : "max-h-0 opacity-0"

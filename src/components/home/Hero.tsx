@@ -26,21 +26,33 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [paused]);
 
+  const previousSlide = () => {
+    setCurrentSlide((current) =>
+      current === 0 ? slides.length - 1 : current - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((current) =>
+      current === slides.length - 1 ? 0 : current + 1
+    );
+  };
+
   return (
     <section className="w-full bg-[var(--bg-secondary)]">
-      <div className="w-full px-6 py-10 sm:px-8 md:py-14 lg:px-10 lg:py-16 2xl:px-12">
-        <div className="grid items-center gap-10 lg:grid-cols-[43%_57%] lg:gap-8">
+      <div className="mx-auto w-full max-w-[1700px] px-6 py-12 sm:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-20 2xl:px-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[40%_60%] lg:gap-16">
           {/* TEXTO */}
-          <div className="w-full max-w-[560px]">
+          <div className="w-full lg:pr-4 xl:pr-8">
             <div className="mb-5 h-[2px] w-12 bg-[var(--color-bronce)] lg:mb-6 lg:w-14" />
 
-            <h1 className="font-[var(--font-cinzel)] text-[37px] leading-[1.12] tracking-[-0.025em] text-[var(--color-carbon)] sm:text-[46px] lg:text-[58px] lg:leading-[1.05] xl:text-[62px]">
+            <h1 className="max-w-[600px] font-[var(--font-cinzel)] text-[37px] leading-[1.12] tracking-[-0.025em] text-[var(--color-carbon)] sm:text-[46px] lg:text-[54px] lg:leading-[1.06] xl:text-[60px]">
               Visión de hoy,
               <br />
               legado de mañana.
             </h1>
 
-            <p className="mt-6 max-w-[450px] text-[15px] leading-7 text-[var(--color-text-secondary)] sm:text-[16px] sm:leading-8 lg:mt-8 lg:text-[18px] lg:leading-9">
+            <p className="mt-6 max-w-[470px] text-[15px] leading-7 text-[var(--color-text-secondary)] sm:text-[16px] sm:leading-8 lg:mt-8 lg:text-[17px] lg:leading-9">
               Desarrollamos y gestionamos negocios con propósito, generando
               valor sostenible para las personas, colaboradores y futuras
               generaciones.
@@ -48,7 +60,7 @@ export default function Hero() {
 
             <a
               href="#negocios"
-              className="mt-7 inline-flex items-center gap-3 bg-[var(--color-bronce-claro)] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[var(--color-bronce)] lg:mt-10 lg:px-8 lg:py-4 lg:text-sm"
+              className="mt-7 inline-flex items-center gap-3 bg-[var(--color-bronce-claro)] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:bg-[var(--color-bronce)] lg:mt-9 lg:px-7 lg:py-4 lg:text-[12px]"
             >
               Conoce más
               <span>→</span>
@@ -57,7 +69,7 @@ export default function Hero() {
 
           {/* CARRUSEL */}
           <div
-            className="relative h-[300px] w-full overflow-hidden rounded-[18px] transition-transform sm:h-[390px] md:h-[450px] lg:h-[500px] lg:-translate-x-5 lg:rounded-3xl xl:h-[520px] xl:-translate-x-7"
+            className="relative h-[300px] w-full overflow-hidden rounded-[18px] sm:h-[390px] md:h-[450px] lg:h-[500px] xl:h-[520px] lg:rounded-[24px]"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
@@ -65,9 +77,7 @@ export default function Hero() {
               <div
                 key={slide}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === currentSlide
-                    ? "z-10 opacity-100"
-                    : "z-0 opacity-0"
+                  index === currentSlide ? "z-10 opacity-100" : "z-0 opacity-0"
                 }`}
               >
                 <Image
@@ -75,7 +85,7 @@ export default function Hero() {
                   alt={`LOAM Grupo Empresarial ${index + 1}`}
                   fill
                   priority={index === 0}
-                  sizes="(max-width: 1024px) 100vw, 57vw"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -85,34 +95,26 @@ export default function Hero() {
             <button
               type="button"
               aria-label="Imagen anterior"
-              onClick={() =>
-                setCurrentSlide((current) =>
-                  current === 0 ? slides.length - 1 : current - 1
-                )
-              }
-              className="absolute left-4 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--bg-primary)]/80 text-[20px] text-[var(--color-carbon)] backdrop-blur-sm transition hover:bg-[var(--bg-primary)] md:flex"
+              onClick={previousSlide}
+              className="absolute left-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-[#EEEBE3]/90 text-[22px] text-[var(--color-carbon)] shadow-[0_5px_20px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#EEEBE3] md:flex"
             >
-              ←
+              <span className="-translate-y-[1px]">‹</span>
             </button>
 
             {/* FLECHA DERECHA */}
             <button
               type="button"
               aria-label="Siguiente imagen"
-              onClick={() =>
-                setCurrentSlide((current) =>
-                  current === slides.length - 1 ? 0 : current + 1
-                )
-              }
-              className="absolute right-4 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--bg-primary)]/80 text-[20px] text-[var(--color-carbon)] backdrop-blur-sm transition hover:bg-[var(--bg-primary)] md:flex"
+              onClick={nextSlide}
+              className="absolute right-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-[#EEEBE3]/90 text-[22px] text-[var(--color-carbon)] shadow-[0_5px_20px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#EEEBE3] md:flex"
             >
-              →
+              <span className="-translate-y-[1px]">›</span>
             </button>
           </div>
         </div>
 
         {/* INDICADORES */}
-        <div className="mt-5 flex items-center justify-center gap-2 lg:mt-6">
+        <div className="mt-6 flex items-center justify-center gap-2 lg:mt-7">
           {slides.map((_, index) => (
             <button
               key={index}
