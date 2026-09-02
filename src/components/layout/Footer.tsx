@@ -44,6 +44,7 @@ export default function Footer() {
                 </Link>
               </li>
 
+              {/*
               <li>
                 <Link
                   href="/#inversion"
@@ -52,7 +53,9 @@ export default function Footer() {
                   Inversión
                 </Link>
               </li>
+              */}
 
+              {/*
               <li>
                 <Link
                   href="/#sostenibilidad"
@@ -61,7 +64,9 @@ export default function Footer() {
                   Sostenibilidad
                 </Link>
               </li>
+              */}
 
+              {/*
               <li>
                 <Link
                   href="/#contacto"
@@ -70,6 +75,7 @@ export default function Footer() {
                   Contacto
                 </Link>
               </li>
+              */}
             </ul>
           </div>
 
@@ -100,7 +106,11 @@ export default function Footer() {
             </div>
 
             <div className="mt-5 flex items-center justify-center gap-5">
-              <Link href="https://www.instagram.com/loamgrupo?igsi=MXcyNDZoYWM1Y2IyMg==">
+              <Link
+                href="https://www.instagram.com/loamgrupo?igsi=MXcyNDZoYWM1Y2IyMg=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src="/images/icons/instagram.svg"
                   alt="Instagram"
@@ -143,6 +153,7 @@ export default function Footer() {
                 className="block border-0 grayscale transition duration-500 hover:grayscale-0"
               />
             </div>
+
             <a
               href="https://www.google.com/maps?q=13.808807639361701,-87.25788058498085"
               target="_blank"
