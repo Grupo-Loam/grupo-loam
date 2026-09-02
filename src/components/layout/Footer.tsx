@@ -143,11 +143,6 @@ export default function Footer() {
                 className="block border-0 grayscale transition duration-500 hover:grayscale-0"
               />
             </div>
-
-            <p className="mt-4 max-w-[250px] text-[13px] leading-6 text-[#666]">
-              13.8088076, -87.2578806
-            </p>
-
             <a
               href="https://www.google.com/maps?q=13.808807639361701,-87.25788058498085"
               target="_blank"
