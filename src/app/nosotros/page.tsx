@@ -232,30 +232,6 @@ export default function NosotrosPage() {
   </div>
 </section>
 
-        {/* FILOSOFÍA */}
-        <section className="flex w-full justify-center bg-[#EAE6DD]">
-          <div className="flex w-full max-w-[1100px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
-            <div className="flex w-full items-center justify-center gap-5 sm:gap-8">
-              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
-
-              <h2 className="shrink-0 font-[var(--font-cinzel)] text-[18px] font-medium uppercase tracking-[0.12em] text-[var(--color-carbon)] sm:text-[22px]">
-                Nuestra filosofía
-              </h2>
-
-              <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
-            </div>
-
-            <h3 className="mt-20 max-w-[850px] text-center font-[var(--font-cinzel)] text-[30px] leading-tight text-[var(--color-carbon)] sm:text-[38px] md:text-[42px]">
-              Construimos. Operamos. Crecemos.
-            </h3>
-
-            <p className="mt-16 max-w-[700px] text-center font-[var(--font-cinzel)] text-[17px] text-[#5D5852] sm:text-[20px]">
-              Visión de hoy, legado de mañana.
-            </p>
-          </div>
-        </section>
-
-        <div className="h-8 w-full bg-[#F3F0E8] md:h-10 lg:h-12" />
 
         {/* CIERRE */}
         <section className="flex w-full justify-center bg-[var(--bg-primary)]">
