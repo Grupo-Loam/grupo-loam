@@ -100,7 +100,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-5 flex items-center justify-center gap-5">
-              <Link href="#">
+              <Link href="https://www.instagram.com/loamgrupo?igsi=MXcyNDZoYWM1Y2IyMg==">
                 <Image
                   src="/images/icons/instagram.svg"
                   alt="Instagram"
