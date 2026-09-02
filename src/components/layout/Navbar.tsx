@@ -10,7 +10,7 @@ const links = [
   { name: "Nosotros", href: "/nosotros" },
   { name: "Negocios", href: "/#negocios" },
 
-  // Pendiente de implementación
+  // PENDIENTES DE IMPLEMENTACIÓN
   // { name: "Inversión", href: "/#inversion" },
   // { name: "Sostenibilidad", href: "/#sostenibilidad" },
   // { name: "Contacto", href: "/#contacto" },
@@ -34,8 +34,23 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[#EEEBE3]/95 backdrop-blur-md">
-      {/* CONTENEDOR */}
-      <div className="relative mx-auto flex h-[90px] w-full max-w-[1700px] items-center justify-between px-6 sm:px-8 md:h-[98px] lg:px-16 xl:px-20 2xl:px-24">
+      {/* CONTENEDOR PRINCIPAL */}
+      <div
+        className="
+          mx-auto
+          flex
+          h-[90px]
+          w-full
+          max-w-[1920px]
+          items-center
+          px-6
+          sm:px-8
+          md:h-[98px]
+          lg:px-14
+          xl:px-16
+          2xl:px-20
+        "
+      >
         {/* LOGO */}
         <Link
           href="/"
@@ -48,31 +63,52 @@ export default function Navbar() {
             width={260}
             height={105}
             priority
-            className="h-auto w-[175px] sm:w-[190px] md:w-[205px] lg:w-[220px]"
+            className="
+              h-auto
+              w-[175px]
+              sm:w-[190px]
+              md:w-[205px]
+              lg:w-[220px]
+            "
           />
         </Link>
 
-        {/* MENÚ DESKTOP CENTRADO REAL */}
-        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex">
-          <div className="flex items-center gap-14 xl:gap-20 2xl:gap-24">
-            {links.map((link) => {
-              const active = isActive(link.href);
+        {/* ======================================================
+            MENÚ DESKTOP
+            ml-auto = lo manda a la derecha
+            pr = evita que quede pegado al borde
+        ====================================================== */}
+        <nav
+          className="
+            ml-auto
+            hidden
+            items-center
+            lg:flex
+            lg:gap-12
+            lg:pr-8
+            xl:gap-16
+            xl:pr-12
+            2xl:gap-20
+            2xl:pr-16
+          "
+        >
+          {links.map((link) => {
+            const active = isActive(link.href);
 
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`relative whitespace-nowrap py-3 text-[12px] font-medium uppercase tracking-[0.14em] transition duration-300 xl:text-[13px] ${
-                    active
-                      ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
-                      : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative whitespace-nowrap py-3 text-[12px] font-medium uppercase tracking-[0.14em] transition duration-300 xl:text-[13px] ${
+                  active
+                    ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
+                    : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* BOTÓN MÓVIL */}
@@ -81,47 +117,60 @@ export default function Navbar() {
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
-          className="relative flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-black/5 focus:outline-none lg:hidden"
+          className="
+            relative
+            ml-auto
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            transition
+            hover:bg-black/5
+            focus:outline-none
+            lg:hidden
+          "
         >
           <div className="relative h-[17px] w-[23px]">
             <span
               className={`absolute left-0 top-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-                open ? "top-[7.5px] w-[23px] rotate-45" : "w-[23px]"
+                open
+                  ? "top-[7.5px] w-[23px] rotate-45"
+                  : "w-[23px]"
               }`}
             />
 
             <span
               className={`absolute left-0 top-[7.5px] h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-                open ? "opacity-0" : "w-[17px] opacity-100"
+                open
+                  ? "opacity-0"
+                  : "w-[17px] opacity-100"
               }`}
             />
 
             <span
               className={`absolute bottom-0 right-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-                open ? "bottom-[8px] w-[23px] -rotate-45" : "w-[20px]"
+                open
+                  ? "bottom-[8px] w-[23px] -rotate-45"
+                  : "w-[20px]"
               }`}
             />
           </div>
         </button>
       </div>
 
-      {/* MENÚ MÓVIL */}
+      {/* ======================================================
+          MENÚ MÓVIL
+      ====================================================== */}
       <div
         className={`overflow-hidden bg-[#EEEBE3] transition-all duration-500 lg:hidden ${
           open
-            ? "max-h-[700px] border-t border-[var(--color-border)] opacity-100"
+            ? "max-h-[500px] border-t border-[var(--color-border)] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
-        <nav
-          className="w-full"
-          style={{
-            paddingLeft: "24px",
-            paddingRight: "24px",
-            paddingTop: "18px",
-            paddingBottom: "28px",
-          }}
-        >
+        <nav className="w-full px-6 pb-8 pt-5 sm:px-8">
           <div className="mx-auto w-full max-w-[520px]">
             {links.map((link) => {
               const active = isActive(link.href);
@@ -131,13 +180,18 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="group flex w-full items-center justify-between border-b border-[var(--color-border)]/70"
-                  style={{
-                    paddingTop: "17px",
-                    paddingBottom: "17px",
-                    paddingLeft: "6px",
-                    paddingRight: "6px",
-                  }}
+                  className="
+                    group
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+                    border-b
+                    border-[var(--color-border)]/70
+                    px-2
+                    py-[17px]
+                    last:border-0
+                  "
                 >
                   <span
                     className={`text-[12px] font-medium uppercase tracking-[0.16em] ${
@@ -161,4 +215,3 @@ export default function Navbar() {
     </header>
   );
 }
-
