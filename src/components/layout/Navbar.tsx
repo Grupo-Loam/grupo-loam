@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[#EEEBE3]/95 backdrop-blur-md">
-      {/* CONTENEDOR */}
+      {/* CONTENEDOR PRINCIPAL */}
       <div className="relative mx-auto flex h-[90px] w-full max-w-[1920px] items-center px-6 sm:px-8 md:h-[98px] lg:px-14 xl:px-16 2xl:px-20">
         {/* LOGO */}
         <Link
@@ -73,48 +73,36 @@ export default function Navbar() {
           })}
         </nav>
 
-{/* BOTÓN MÓVIL */}
-<button
-  type="button"
-  onClick={() => setOpen((current) => !current)}
-  aria-label={open ? "Cerrar menú" : "Abrir menú"}
-  aria-expanded={open}
-  className="
-    relative
-    ml-auto
-    flex
-    h-10
-    w-10
-    shrink-0
-    items-center
-    justify-center
-    rounded-full
-    transition
-    hover:bg-black/5
-    focus:outline-none
-    lg:hidden
-  "
->
-  <div className="relative h-[17px] w-[23px]">
-    <span
-      className={`absolute left-0 top-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-        open ? "top-[7.5px] w-[23px] rotate-45" : "w-[23px]"
-      }`}
-    />
+        {/* BOTÓN MÓVIL */}
+        <button
+          type="button"
+          onClick={() => setOpen((current) => !current)}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          className="relative ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition hover:bg-black/5 focus:outline-none lg:hidden"
+        >
+          <div className="relative h-[17px] w-[23px]">
+            <span
+              className={`absolute left-0 top-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
+                open ? "top-[7.5px] w-[23px] rotate-45" : "w-[23px]"
+              }`}
+            />
 
-    <span
-      className={`absolute left-0 top-[7.5px] h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-        open ? "opacity-0" : "w-[17px] opacity-100"
-      }`}
-    />
+            <span
+              className={`absolute left-0 top-[7.5px] h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
+                open ? "opacity-0" : "w-[17px] opacity-100"
+              }`}
+            />
 
-    <span
-      className={`absolute bottom-0 right-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
-        open ? "bottom-[8px] w-[23px] -rotate-45" : "w-[20px]"
-      }`}
-    />
-  </div>
-</button>
+            <span
+              className={`absolute bottom-0 right-0 h-[1.5px] bg-[var(--color-carbon)] transition-all duration-300 ${
+                open ? "bottom-[8px] w-[23px] -rotate-45" : "w-[20px]"
+              }`}
+            />
+          </div>
+        </button>
+      </div>
+
       {/* MENÚ MÓVIL */}
       <div
         className={`overflow-hidden bg-[#EEEBE3] transition-all duration-500 lg:hidden ${
