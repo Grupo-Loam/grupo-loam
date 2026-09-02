@@ -126,38 +126,39 @@ export default function Footer() {
             </div>
           </div>
 
-{/* UBICACIÓN */}
-<div className="flex h-full flex-col items-center justify-center text-center">
-  <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
-    UBICACIÓN
-  </h3>
+          {/* UBICACIÓN */}
+          <div className="flex h-full flex-col items-center justify-center text-center">
+            <h3 className="mb-5 font-[var(--font-cinzel)] text-[16px] tracking-[0.05em] text-[var(--color-carbon)]">
+              UBICACIÓN
+            </h3>
 
-  <div className="w-full max-w-[210px] overflow-hidden border border-[var(--color-border)] shadow-sm">
-    <iframe
-      title="Ubicación LOAM"
-      src="https://maps.google.com/maps?q=13.808807639361701,-87.25788058498085&z=17&output=embed"
-      width="100%"
-      height="145"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      className="border-0 grayscale transition duration-500 hover:grayscale-0"
-    />
-  </div>
+            <div className="w-full max-w-[210px] overflow-hidden border border-[var(--color-border)] shadow-sm">
+              <iframe
+                title="Ubicación LOAM"
+                src="https://maps.google.com/maps?q=13.808807639361701,-87.25788058498085&z=17&output=embed"
+                width="100%"
+                height="145"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="block border-0 grayscale transition duration-500 hover:grayscale-0"
+              />
+            </div>
 
-  <p className="mt-4 max-w-[250px] text-[13px] leading-6 text-[#666]">
-    13.8088076, -87.2578806
-  </p>
+            <p className="mt-4 max-w-[250px] text-[13px] leading-6 text-[#666]">
+              13.8088076, -87.2578806
+            </p>
 
-  <a
-    href="https://www.google.com/maps?q=13.808807639361701,-87.25788058498085"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-bronce)] transition hover:opacity-70"
-  >
-    Abrir en Google Maps
-    <span>↗</span>
-  </a>
-</div>
+            <a
+              href="https://www.google.com/maps?q=13.808807639361701,-87.25788058498085"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-bronce)] transition hover:opacity-70"
+            >
+              Abrir en Google Maps
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
 
         {/* PARTE INFERIOR */}
         <div className="mt-12 border-t border-[var(--color-border)] pt-6">
