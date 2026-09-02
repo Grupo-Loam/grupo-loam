@@ -135,7 +135,7 @@ export default function Footer() {
 <div className="w-full max-w-[210px] overflow-hidden border border-[var(--color-border)] shadow-sm">
                   <iframe
                 title="Ubicación LOAM"
-                src="https://maps.google.com/maps?q=Tegucigalpa,Honduras&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.app.goo.gl/g2qMWrMkEDaY7f567"
                 width="100%"
                 height="125"
                 loading="lazy"
@@ -143,11 +143,6 @@ export default function Footer() {
                 className="border-0 grayscale transition duration-500 hover:grayscale-0"
               />
             </div>
-
-            <p className="mt-4 max-w-[320px] text-[13px] leading-6 text-[#666]">
-              Próximamente compartiremos nuestra ubicación oficial.
-            </p>
-
             <a
               href="#"
               target="_blank"
