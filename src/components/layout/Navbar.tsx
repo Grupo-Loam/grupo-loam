@@ -9,9 +9,11 @@ const links = [
   { name: "Inicio", href: "/" },
   { name: "Nosotros", href: "/nosotros" },
   { name: "Negocios", href: "/#negocios" },
-  { name: "Inversión", href: "/#inversion" },
-  { name: "Sostenibilidad", href: "/#sostenibilidad" },
-  { name: "Contacto", href: "/#contacto" },
+
+  // Pendiente de implementación
+  // { name: "Inversión", href: "/#inversion" },
+  // { name: "Sostenibilidad", href: "/#sostenibilidad" },
+  // { name: "Contacto", href: "/#contacto" },
 ];
 
 export default function Navbar() {
@@ -19,14 +21,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
-    }
-
-    if (href === "/nosotros") {
-      return pathname === "/nosotros";
-    }
-
+    if (href === "/") return pathname === "/";
+    if (href === "/nosotros") return pathname === "/nosotros";
     return false;
   };
 
@@ -51,24 +47,26 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP */}
-        <nav className="hidden items-center gap-7 lg:flex xl:gap-10">
-          {links.map((link) => {
-            const active = isActive(link.href);
+        <nav className="hidden flex-1 justify-center lg:flex">
+          <div className="flex items-center gap-14 xl:gap-20 2xl:gap-24">
+            {links.map((link) => {
+              const active = isActive(link.href);
 
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`relative whitespace-nowrap py-3 text-[11px] font-medium uppercase tracking-[0.13em] transition duration-300 xl:text-[12px] ${
-                  active
-                    ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
-                    : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
-                }`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`relative whitespace-nowrap py-3 text-[12px] font-medium uppercase tracking-[0.13em] transition duration-300 xl:text-[13px] ${
+                    active
+                      ? "text-[var(--color-carbon)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[var(--color-bronce)]"
+                      : "text-[var(--color-carbon)] hover:text-[var(--color-bronce)]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
         </nav>
 
         {/* BOTÓN MÓVIL */}
