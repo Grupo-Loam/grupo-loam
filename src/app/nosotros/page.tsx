@@ -120,6 +120,7 @@ export default function NosotrosPage() {
 ======================================== */}
 <section className="flex w-full justify-center bg-[var(--bg-primary)]">
   <div className="flex w-full max-w-[1380px] flex-col items-center px-6 py-20 text-center sm:px-8 md:py-24 lg:px-10 lg:py-28">
+
     {/* TÍTULO */}
     <div className="flex w-full max-w-[1100px] items-center justify-center gap-5 sm:gap-8">
       <div className="h-px flex-1 bg-[var(--color-bronce)]/55" />
@@ -132,7 +133,7 @@ export default function NosotrosPage() {
     </div>
 
     {/* ESPACIO ENTRE VALORES Y CARDS */}
-    <div className="h-16 md:h-20 lg:h-24" />
+    <div className="h-8 md:h-10 lg:h-12" />
 
     {/* CARDS */}
     <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -154,7 +155,6 @@ export default function NosotrosPage() {
             hover:shadow-[0_14px_36px_rgba(23,26,28,0.10)]
           "
         >
-          {/* IMAGEN */}
           <div className="relative h-[215px] w-full overflow-hidden sm:h-[225px]">
             <Image
               src={value.image}
@@ -167,27 +167,13 @@ export default function NosotrosPage() {
             <div className="absolute inset-0 bg-black/[0.03] transition duration-500 group-hover:bg-transparent" />
           </div>
 
-          {/* CONTENIDO */}
           <div className="flex flex-col px-8 py-8">
             <span className="text-[11px] font-medium tracking-[0.18em] text-[var(--color-bronce)]">
               0{index + 1}
             </span>
 
-            {/* BLOQUE FIJO PARA ALINEAR TODOS LOS TÍTULOS */}
             <div className="mt-5 flex min-h-[60px] items-start">
-              <h3
-                className="
-                  max-w-[205px]
-                  font-[var(--font-cinzel)]
-                  text-[20px]
-                  font-medium
-                  uppercase
-                  leading-[1.3]
-                  tracking-[0.02em]
-                  text-[#1D1D1B]
-                  sm:text-[21px]
-                "
-              >
+              <h3 className="max-w-[205px] font-[var(--font-cinzel)] text-[20px] font-medium uppercase leading-[1.3] tracking-[0.02em] text-[#1D1D1B] sm:text-[21px]">
                 {value.title}
               </h3>
             </div>
@@ -203,7 +189,7 @@ export default function NosotrosPage() {
     </div>
 
     {/* ESPACIO ENTRE CARDS Y FILOSOFÍA */}
-    <div className="h-20 md:h-24 lg:h-28" />
+    <div className="h-10 md:h-12 lg:h-14" />
   </div>
 </section>
 
