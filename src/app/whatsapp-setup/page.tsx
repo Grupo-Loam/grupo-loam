@@ -76,30 +76,30 @@ export default function WhatsAppSetupPage() {
       return;
     }
 
-    window.FB.login(
-      async (response: any) => {
-        console.log("Meta response status:", response?.status);
+  window.FB.login(
+  async (response: any) => {
+    console.log("Meta response status:", response?.status);
 
-        const code = response?.authResponse?.code;
+    const code = response?.authResponse?.code;
 
-        if (!code) {
-          setError("Meta no devolvió un código de autorización.");
-          return;
-        }
+    if (!code) {
+      setError("Meta no devolvió un código de autorización.");
+      return;
+    }
 
-        await exchangeCode(code);
-      },
-      {
-        config_id: "28107029115586660",
-        response_type: "code",
-        override_default_response_type: true,
-        extras: {
-          setup: {},
-          featureType: "",
-          sessionInfoVersion: "3",
-        },
-      }
-    );
+    await exchangeCode(code);
+  },
+  {
+    config_id: "28107029115586660",
+    response_type: "code",
+    override_default_response_type: true,
+    extras: {
+      setup: {},
+      featureType: "whatsapp_business_app_onboarding",
+      sessionInfoVersion: "3",
+    },
+  }
+);
   };
 
   return (
