@@ -11,8 +11,9 @@ declare global {
 
 export default function WhatsAppSetupPage() {
   const [sdkReady, setSdkReady] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     window.fbAsyncInit = function () {
@@ -39,6 +40,33 @@ export default function WhatsAppSetupPage() {
     }
   }, []);
 
+  const exchangeCode = async (code: string) => {
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/whatsapp/exchange-code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error || "No se pudo completar la conexión.");
+      }
+
+      setResult(data);
+    } catch (err: any) {
+      setError(err.message || "Error procesando la autorización.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const connectWhatsApp = () => {
     setError("");
     setResult(null);
@@ -49,22 +77,17 @@ export default function WhatsAppSetupPage() {
     }
 
     window.FB.login(
-      (response: any) => {
-        console.log("Meta response:", response);
+      async (response: any) => {
+        console.log("Meta response status:", response?.status);
 
-        if (response?.authResponse?.code) {
-          setResult({
-            status: "success",
-            code: response.authResponse.code,
-            raw: response,
-          });
+        const code = response?.authResponse?.code;
+
+        if (!code) {
+          setError("Meta no devolvió un código de autorización.");
           return;
         }
 
-        setResult({
-          status: response?.status || "unknown",
-          raw: response,
-        });
+        await exchangeCode(code);
       },
       {
         config_id: "28107029115586660",
@@ -101,22 +124,25 @@ export default function WhatsAppSetupPage() {
         <h1>Conectar WhatsApp Business</h1>
 
         <p>
-          Usa este botón para iniciar el registro de WhatsApp Business con Meta
-          y habilitar Coexistence.
+          Usa este botón para conectar la cuenta de WhatsApp Business de Grupo
+          LOAM con Meta.
         </p>
 
         <button
           onClick={connectWhatsApp}
-          disabled={!sdkReady}
+          disabled={!sdkReady || loading}
           style={{
             padding: "14px 20px",
             borderRadius: "10px",
             border: "none",
-            cursor: sdkReady ? "pointer" : "not-allowed",
+            cursor:
+              sdkReady && !loading ? "pointer" : "not-allowed",
             fontSize: "16px",
           }}
         >
-          {sdkReady
+          {loading
+            ? "Conectando..."
+            : sdkReady
             ? "Conectar WhatsApp Business"
             : "Cargando Meta SDK..."}
         </button>
@@ -127,21 +153,27 @@ export default function WhatsAppSetupPage() {
           </p>
         )}
 
-        {result && (
+        {result?.success && (
           <div style={{ marginTop: "30px" }}>
-            <h2>Respuesta de Meta</h2>
+            <h2>WhatsApp conectado correctamente</h2>
 
-            <pre
-              style={{
-                whiteSpace: "pre-wrap",
-                wordBreak: "break-word",
-                background: "#f5f5f5",
-                padding: "16px",
-                borderRadius: "10px",
-              }}
-            >
-              {JSON.stringify(result, null, 2)}
-            </pre>
+            <p>
+              La autorización con Meta fue procesada correctamente.
+            </p>
+
+            {result.wabaId && (
+              <p>
+                <strong>WhatsApp Business Account ID:</strong>{" "}
+                {result.wabaId}
+              </p>
+            )}
+
+            {result.phoneNumberId && (
+              <p>
+                <strong>Phone Number ID:</strong>{" "}
+                {result.phoneNumberId}
+              </p>
+            )}
           </div>
         )}
       </div>
