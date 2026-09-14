@@ -219,7 +219,7 @@ export default function WhatsAppSetupPage() {
           await exchangeCode(code);
         },
         {
-          config_id: "28107029115586660",
+          config_id: "1126162326746947",
           response_type: "code",
           override_default_response_type: true,
 
