@@ -37,6 +37,8 @@ export default function WhatsAppSetupPage() {
       script.defer = true;
 
       document.body.appendChild(script);
+    } else if (window.FB) {
+      setSdkReady(true);
     }
   }, []);
 
@@ -56,12 +58,19 @@ export default function WhatsAppSetupPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.error || "No se pudo completar la conexión.");
+        throw new Error(
+          data?.error || "No se pudo completar la conexión."
+        );
       }
 
-      setResult(data);
+      setResult({
+        success: true,
+        ...data,
+      });
     } catch (err: any) {
-      setError(err.message || "Error procesando la autorización.");
+      setError(
+        err?.message || "Error procesando la autorización."
+      );
     } finally {
       setLoading(false);
     }
@@ -76,30 +85,40 @@ export default function WhatsAppSetupPage() {
       return;
     }
 
-  window.FB.login(
-  async (response: any) => {
-    console.log("Meta response status:", response?.status);
+    window.FB.login(
+      async (response: any) => {
+        console.log("META FULL RESPONSE:", response);
 
-    const code = response?.authResponse?.code;
+        const debugResult = {
+          status: response?.status ?? "sin-status",
+          authResponse: response?.authResponse ?? null,
+          fullResponse: response,
+        };
 
-    if (!code) {
-      setError("Meta no devolvió un código de autorización.");
-      return;
-    }
+        setResult(debugResult);
 
-    await exchangeCode(code);
-  },
-  {
-    config_id: "28107029115586660",
-    response_type: "code",
-    override_default_response_type: true,
-    extras: {
-      setup: {},
-      featureType: "whatsapp_business_app_onboarding",
-      sessionInfoVersion: "3",
-    },
-  }
-);
+        const code = response?.authResponse?.code;
+
+        if (!code) {
+          setError(
+            "Meta cerró el flujo sin devolver un código de autorización. Revisa la respuesta mostrada abajo."
+          );
+          return;
+        }
+
+        await exchangeCode(code);
+      },
+      {
+        config_id: "28107029115586660",
+        response_type: "code",
+        override_default_response_type: true,
+        extras: {
+          setup: {},
+          featureType: "whatsapp_business_app_onboarding",
+          sessionInfoVersion: "3",
+        },
+      }
+    );
   };
 
   return (
@@ -110,6 +129,7 @@ export default function WhatsAppSetupPage() {
         alignItems: "center",
         justifyContent: "center",
         padding: "40px",
+        background: "#f8f6f1",
       }}
     >
       <div
@@ -119,6 +139,7 @@ export default function WhatsAppSetupPage() {
           border: "1px solid #ddd",
           borderRadius: "16px",
           padding: "32px",
+          background: "#fff",
         }}
       >
         <h1>Conectar WhatsApp Business</h1>
@@ -138,6 +159,7 @@ export default function WhatsAppSetupPage() {
             cursor:
               sdkReady && !loading ? "pointer" : "not-allowed",
             fontSize: "16px",
+            fontWeight: 600,
           }}
         >
           {loading
@@ -148,9 +170,16 @@ export default function WhatsAppSetupPage() {
         </button>
 
         {error && (
-          <p style={{ marginTop: "20px" }}>
-            Error: {error}
-          </p>
+          <div
+            style={{
+              marginTop: "20px",
+              padding: "14px",
+              border: "1px solid #d66",
+              borderRadius: "10px",
+            }}
+          >
+            <strong>Error:</strong> {error}
+          </div>
         )}
 
         {result?.success && (
@@ -174,6 +203,25 @@ export default function WhatsAppSetupPage() {
                 {result.phoneNumberId}
               </p>
             )}
+          </div>
+        )}
+
+        {result && !result?.success && (
+          <div style={{ marginTop: "30px" }}>
+            <h2>Respuesta de depuración de Meta</h2>
+
+            <pre
+              style={{
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-word",
+                background: "#f5f5f5",
+                padding: "16px",
+                borderRadius: "10px",
+                overflowX: "auto",
+              }}
+            >
+              {JSON.stringify(result, null, 2)}
+            </pre>
           </div>
         )}
       </div>
