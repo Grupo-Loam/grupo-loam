@@ -9,6 +9,9 @@ declare global {
   }
 }
 
+const META_APP_ID = "28053745120961816";
+const META_CONFIG_ID = "1126162326746947";
+
 export default function WhatsAppSetupPage() {
   const [sdkReady, setSdkReady] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -32,7 +35,6 @@ export default function WhatsAppSetupPage() {
   };
 
   useEffect(() => {
-    // Captura mensajes enviados por Meta / Embedded Signup
     const messageHandler = (event: MessageEvent) => {
       if (
         !event.origin.includes("facebook.com") &&
@@ -48,7 +50,7 @@ export default function WhatsAppSetupPage() {
           data = JSON.parse(data);
         }
       } catch {
-        // Si no es JSON, mostramos el valor original.
+        // dejamos el valor original
       }
 
       addEvent("WINDOW_MESSAGE", {
@@ -56,7 +58,6 @@ export default function WhatsAppSetupPage() {
         data,
       });
 
-      // Eventos oficiales del Embedded Signup
       if (data?.type === "WA_EMBEDDED_SIGNUP") {
         addEvent("WA_EMBEDDED_SIGNUP", data);
 
@@ -69,7 +70,9 @@ export default function WhatsAppSetupPage() {
         }
 
         if (data.event === "CANCEL") {
-          setError("El proceso de WhatsApp Embedded Signup fue cancelado.");
+          setError(
+            "El proceso de WhatsApp Embedded Signup fue cancelado."
+          );
         }
 
         if (data.event === "ERROR") {
@@ -84,12 +87,12 @@ export default function WhatsAppSetupPage() {
 
     window.fbAsyncInit = function () {
       addEvent("FB_SDK_INIT", {
-        appId: "28053745120961816",
+        appId: META_APP_ID,
         version: "v26.0",
       });
 
       window.FB.init({
-        appId: "28053745120961816",
+        appId: META_APP_ID,
         cookie: true,
         xfbml: true,
         version: "v26.0",
@@ -112,8 +115,8 @@ export default function WhatsAppSetupPage() {
         addEvent("FB_SDK_SCRIPT_LOADED", true);
       };
 
-      script.onerror = (event) => {
-        addEvent("FB_SDK_SCRIPT_ERROR", event);
+      script.onerror = () => {
+        addEvent("FB_SDK_SCRIPT_ERROR", true);
         setError("No se pudo cargar el SDK de Facebook.");
       };
 
@@ -184,7 +187,7 @@ export default function WhatsAppSetupPage() {
     }
 
     addEvent("FB_LOGIN_START", {
-      configId: "28107029115586660",
+      configId: META_CONFIG_ID,
       featureType: "whatsapp_business_app_onboarding",
     });
 
@@ -202,8 +205,7 @@ export default function WhatsAppSetupPage() {
 
           setResult({
             status: response?.status ?? "sin-status",
-            authResponse:
-              response?.authResponse ?? null,
+            authResponse: response?.authResponse ?? null,
             fullResponse: response,
           });
 
@@ -219,23 +221,18 @@ export default function WhatsAppSetupPage() {
           await exchangeCode(code);
         },
         {
-          config_id: "1126162326746947",
+          config_id: META_CONFIG_ID,
           response_type: "code",
           override_default_response_type: true,
 
           extras: {
             setup: {},
-            featureType:
-              "whatsapp_business_app_onboarding",
+            featureType: "whatsapp_business_app_onboarding",
             sessionInfoVersion: "3",
           },
         }
       );
 
-      /*
-       * Si Meta destruye el popup antes de ejecutar
-       * el callback, esto nos lo dejará explícito.
-       */
       setTimeout(() => {
         if (!callbackReceived.current) {
           addEvent("FB_LOGIN_CALLBACK_NOT_RECEIVED", {
@@ -244,7 +241,7 @@ export default function WhatsAppSetupPage() {
           });
 
           setError(
-            "Meta cerró/interrumpió el popup antes de ejecutar el callback de FB.login. El problema ocurre dentro del flujo de Meta, antes de devolver la autorización."
+            "Meta cerró/interrumpió el popup antes de ejecutar el callback de FB.login."
           );
         }
       }, 15000);
@@ -283,15 +280,17 @@ export default function WhatsAppSetupPage() {
         <h1>Conectar WhatsApp Business</h1>
 
         <p>
-          Usa este botón para conectar la cuenta de
-          WhatsApp Business de Grupo LOAM con Meta.
+          Usa este botón para conectar la cuenta de WhatsApp Business
+          de Grupo LOAM con Meta.
         </p>
 
         <p>
           Estado SDK:{" "}
-          <strong>
-            {sdkReady ? "LISTO" : "CARGANDO"}
-          </strong>
+          <strong>{sdkReady ? "LISTO" : "CARGANDO"}</strong>
+        </p>
+
+        <p>
+          Configuration ID: <strong>{META_CONFIG_ID}</strong>
         </p>
 
         <button
@@ -328,7 +327,6 @@ export default function WhatsAppSetupPage() {
             }}
           >
             <strong>Error</strong>
-
             <p>{error}</p>
           </div>
         )}
