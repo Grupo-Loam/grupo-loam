@@ -91,12 +91,13 @@ export default function WhatsAppSetupPage() {
         version: "v26.0",
       });
 
-      window.FB.init({
-        appId: META_APP_ID,
-        cookie: true,
-        xfbml: true,
-        version: "v26.0",
-      });
+window.FB.init({
+  appId: META_APP_ID,
+  cookie: true,
+  xfbml: true,
+  version: "v26.0",
+  fedCM: false,
+});
 
       setSdkReady(true);
     };
