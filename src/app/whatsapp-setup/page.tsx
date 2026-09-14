@@ -50,7 +50,7 @@ export default function WhatsAppSetupPage() {
           data = JSON.parse(data);
         }
       } catch {
-        // dejamos el valor original
+        // Dejamos el valor original.
       }
 
       addEvent("WINDOW_MESSAGE", {
@@ -89,15 +89,16 @@ export default function WhatsAppSetupPage() {
       addEvent("FB_SDK_INIT", {
         appId: META_APP_ID,
         version: "v26.0",
+        fedCM: false,
       });
 
-window.FB.init({
-  appId: META_APP_ID,
-  cookie: true,
-  xfbml: true,
-  version: "v26.0",
-  fedCM: false,
-});
+      window.FB.init({
+        appId: META_APP_ID,
+        cookie: true,
+        xfbml: true,
+        version: "v26.0",
+        fedCM: false,
+      });
 
       setSdkReady(true);
     };
@@ -190,11 +191,12 @@ window.FB.init({
     addEvent("FB_LOGIN_START", {
       configId: META_CONFIG_ID,
       featureType: "whatsapp_business_app_onboarding",
+      fedCM: false,
     });
 
     try {
       window.FB.login(
-        async (response: any) => {
+        (response: any) => {
           callbackReceived.current = true;
 
           addEvent("FB_LOGIN_CALLBACK", response);
@@ -219,7 +221,7 @@ window.FB.init({
             return;
           }
 
-          await exchangeCode(code);
+          void exchangeCode(code);
         },
         {
           config_id: META_CONFIG_ID,
