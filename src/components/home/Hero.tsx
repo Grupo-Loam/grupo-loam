@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const slides = [
-  "/images/hero/Hero-1.png",
   "/images/hero/Hero-2.png",
+  "/images/hero/Hero-1.png",
   "/images/hero/Hero-3.png",
   "/images/hero/Hero-4.png",
 ];
